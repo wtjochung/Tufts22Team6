@@ -5672,6 +5672,22 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1061977855266073522, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1061977855266073522, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_DrawHalo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1061977855266073522, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_Intensity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1061977855266073522, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_CookieSize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
 --- !u!4 &1216881240 stripped
@@ -5841,7 +5857,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6195,7 +6211,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7882353, g: 0.86790454, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
