@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 54275937503739054}
   - component: {fileID: 82249406116954962}
   m_Layer: 0
-  m_Name: FPSController
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
