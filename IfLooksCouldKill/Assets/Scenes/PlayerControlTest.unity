@@ -5787,7 +5787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487543515492766800, guid: 2914263bae5d22f42b7fb79f58cbc314, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.6
+      value: 9.7999
       objectReference: {fileID: 0}
     - target: {fileID: 487543515492766800, guid: 2914263bae5d22f42b7fb79f58cbc314, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5840,6 +5840,10 @@ PrefabInstance:
     - target: {fileID: 487543515492766812, guid: 2914263bae5d22f42b7fb79f58cbc314, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 487543515492766812, guid: 2914263bae5d22f42b7fb79f58cbc314, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2914263bae5d22f42b7fb79f58cbc314, type: 3}
