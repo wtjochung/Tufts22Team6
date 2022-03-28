@@ -7,6 +7,7 @@ TagManager:
   - Laser
   - Mirror
   - Interactable
+  - Light
   layers:
   - Default
   - TransparentFX

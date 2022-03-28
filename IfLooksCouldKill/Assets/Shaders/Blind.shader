@@ -7,7 +7,6 @@ Shader "Custom/BlindS" {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
-        _Blind ("Blind", Int) = 0 //For whatever reason, Unity doesn't let me use bool as a type here
     }
 
     SubShader {
@@ -31,7 +30,7 @@ Shader "Custom/BlindS" {
         half _Glossiness;
         half _Metallic;
         fixed4 _Color;
-        bool _Blind;
+        uniform int _Blind;
 
         UNITY_INSTANCING_BUFFER_START(Props)
             // put more per-instance properties here

@@ -16,11 +16,12 @@ public class TouchedByLaser : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Laser")
-        {
-            gameObject.SetActive(false);
+    void OnTriggerEnter(Collider other) {
+//		if (!GameManager.blind) {
+		if (!PlayerControl.temp_blind) {
+            if (other.gameObject.tag == "Laser") {
+                gameObject.SetActive(false);
+            }
         }
     }
 }
