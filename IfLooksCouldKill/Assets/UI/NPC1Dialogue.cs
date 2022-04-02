@@ -26,7 +26,8 @@ public class NPC1Dialogue : MonoBehaviour
    // public GameObject nextButton;
     //public GameHandler gameHandler;
     //public AudioSource audioSource;
-    private bool allowEKey = true;
+    public bool allowEKey = false;
+    
 
     void Start()
     {         // initial visibility settings
@@ -51,6 +52,11 @@ public class NPC1Dialogue : MonoBehaviour
                 talking();
             }
         }
+    }
+
+    public void allowKeyPress(bool b)
+    {
+        allowEKey = b;
     }
 
     //Story Units:
