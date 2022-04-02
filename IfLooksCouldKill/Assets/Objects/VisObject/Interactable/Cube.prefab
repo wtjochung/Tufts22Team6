@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 487543515492766815}
   - component: {fileID: 487543515492766814}
   - component: {fileID: 487543515492766813}
-  - component: {fileID: 487543515492766801}
   - component: {fileID: 487543515492766802}
   - component: {fileID: 487543515492766803}
   - component: {fileID: 7449115973585695955}
   - component: {fileID: 8829965013670823920}
+  - component: {fileID: -9116244750902403996}
   m_Layer: 3
   m_Name: Cube
   m_TagString: Interactable
@@ -101,18 +101,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &487543515492766801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487543515492766812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d6fd5b7ea88e0478c874b97192d107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &487543515492766802
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -255,3 +243,18 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &-9116244750902403996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487543515492766812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2042cf774a2cf4747aef34231835e897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
+  destroyWhenHit: 1
+  timeToDestroy: 1

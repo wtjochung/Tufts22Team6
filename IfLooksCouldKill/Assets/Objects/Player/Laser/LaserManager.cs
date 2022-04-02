@@ -11,7 +11,7 @@ public class LaserManager : MonoBehaviour {
 	List<LaserBeam> lasers = new List<LaserBeam>();
 	List<GameObject> lines = new List<GameObject>();
 
-	public GameObject hitEffect;
+	//public GameObject hitEffect;
 
 	public void AddLaser(LaserBeam laser) { 
 		lasers.Add(laser); 
@@ -59,8 +59,10 @@ public class LaserManager : MonoBehaviour {
 		
 		if (intersect) {
 			if (hit.transform.gameObject.CompareTag("Interactable")) {
-				Instantiate(hitEffect);
+				/*Instantiate(hitEffect);
 				hit.transform.gameObject.SetActive(false);
+				*/
+				hit.transform.gameObject.GetComponent<VisObject>().HitByLaser();
 			}
 			else {
 				result += CalcLaserLine(hitposition, Vector3.Reflect(direction, hit.normal), index + result);
