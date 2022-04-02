@@ -28,11 +28,13 @@ public class VisObject : MonoBehaviour {
 
     public void HitByLaser()
     {
-        hit = true;
-        Instantiate(hitEffect);
+        if (!hit)
+        {
+            hit = true;
+            Instantiate(hitEffect);
 
-        changeColor();
-        
+            changeColor();
+        }
     }
 
     private void changeColor()
