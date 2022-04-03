@@ -8,6 +8,7 @@ TagManager:
   - Mirror
   - Interactable
   - Light
+  - Post Processor
   layers:
   - Default
   - TransparentFX

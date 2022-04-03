@@ -35,8 +35,7 @@ public class LaserManager : MonoBehaviour {
 
 	void Update() {
 		int linesCount = 0;
-//		if (!GameManager.blind) {
-		if (!PlayerControl.temp_blind) {
+		if (!GameManager.blind) {
 			foreach (LaserBeam laser in lasers) {
 				linesCount += CalcLaserLine(laser.transform.position + laser.transform.forward * 0.6f, laser.transform.forward, linesCount);
 			}

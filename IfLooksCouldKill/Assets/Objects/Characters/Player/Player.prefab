@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 195517857}
   - component: {fileID: 195517856}
   - component: {fileID: 195517855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1241736653}
   - component: {fileID: 1241736652}
   - component: {fileID: 1241736651}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder
   m_TagString: Laser
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 124442746469960742}
   - component: {fileID: 1061977855266073522}
   - component: {fileID: 2100521858010679001}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -741,6 +741,10 @@ PrefabInstance:
     - target: {fileID: 3225554356138168141, guid: 13165c5e986e5e04d9e04d29e62d0394, type: 3}
       propertyPath: m_Name
       value: LaserBeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225554356138168141, guid: 13165c5e986e5e04d9e04d29e62d0394, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13165c5e986e5e04d9e04d29e62d0394, type: 3}
