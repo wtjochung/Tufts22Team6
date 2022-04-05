@@ -19,9 +19,11 @@ public class GameManager : MonoBehaviour {
         blind = !blind;
         if (blind) {
             Shader.SetGlobalInt("_Blind", 1);
+            RenderSettings.reflectionIntensity = 0.0f;
         }
         else {
             Shader.SetGlobalInt("_Blind", 0);
+            RenderSettings.reflectionIntensity = 1.0f;
         }
         GameObject[] lights = GameObject.FindGameObjectsWithTag("Light");
         foreach (GameObject light in lights) {
