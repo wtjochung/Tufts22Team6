@@ -52,7 +52,9 @@ public class LaserManager : MonoBehaviour {
 			hit.point = startPosition + direction * maxStepDistance; 
 		}
 
-		DrawLine(startPosition, hit.point, index);
+		unsafe {
+			DrawLine(&startPosition, &hit, index);
+		}
 		
 		if (intersect) {
 			if (hit.transform.gameObject.CompareTag("Interactable")) {
@@ -68,7 +70,8 @@ public class LaserManager : MonoBehaviour {
 		return 1;
 	}
 
-	void DrawLine(Vector3 startPosition, Vector3 finishPosition, int index) {
+	
+	unsafe void DrawLine(Vector3 *startPosition, RaycastHit *finishPosition, int index) {
 		LineRenderer line = null;
 		if (index < lines.Count) {
 			line = lines[index].GetComponent<LineRenderer>();
@@ -79,10 +82,8 @@ public class LaserManager : MonoBehaviour {
 			lines.Add(go);
 		}
 
-		line.SetPosition(0, startPosition);
-		line.SetPosition(1, finishPosition);
-//		line.startWidth = 0.3f;
-//		line.endWidth = 0.3f;
+		line.SetPosition(0, *startPosition);
+		line.SetPosition(1, finishPosition->point);
 	}
 
 
