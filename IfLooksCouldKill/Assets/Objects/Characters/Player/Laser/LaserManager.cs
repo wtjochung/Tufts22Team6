@@ -44,17 +44,15 @@ public class LaserManager : MonoBehaviour {
 	}
 
 	int CalcLaserLine(Vector3 startPosition, Vector3 direction, int index) {
-		int result = 1;
 		RaycastHit hit;
 		Ray ray = new Ray(startPosition, direction);
 		bool intersect = Physics.Raycast(ray, out hit, maxStepDistance);		
 
-		Vector3 hitposition = hit.point;
 		if (!intersect) { 
-			hitposition = startPosition + direction * maxStepDistance; 
+			hit.point = startPosition + direction * maxStepDistance; 
 		}
 
-		DrawLine(startPosition, hitposition, index);
+		DrawLine(startPosition, hit.point, index);
 		
 		if (intersect) {
 			if (hit.transform.gameObject.CompareTag("Interactable")) {
@@ -64,10 +62,10 @@ public class LaserManager : MonoBehaviour {
 				hit.transform.gameObject.GetComponent<VisObject>().HitByLaser();
 			}
 			else {
-				result += CalcLaserLine(hitposition, Vector3.Reflect(direction, hit.normal), index + result);
+				return 1 + CalcLaserLine(hit.point, Vector3.Reflect(direction, hit.normal), index + 1);
 			}
 		}
-		return result;
+		return 1;
 	}
 
 	void DrawLine(Vector3 startPosition, Vector3 finishPosition, int index) {
@@ -83,6 +81,8 @@ public class LaserManager : MonoBehaviour {
 
 		line.SetPosition(0, startPosition);
 		line.SetPosition(1, finishPosition);
+//		line.startWidth = 0.3f;
+//		line.endWidth = 0.3f;
 	}
 
 
