@@ -10,18 +10,21 @@ public class VisObject : MonoBehaviour {
 
     private bool hit = false;
 
+    private Color altColor;
+    private float colorChangeStep;
+
+    public bool openDoor = false;
+
+    private void Start()
+    {
+        altColor = this.GetComponent<Renderer>().material.color;
+        colorChangeStep = 1f / timeToDestroy;
+
+    }
+
     void Update()
     {
-        if (hit)
-        {
-            if (timeToDestroy > 0)
-            {
-                timeToDestroy -= Time.deltaTime;
-            } else if (timeToDestroy <= 0)
-            {
-                this.transform.gameObject.SetActive(false);
-            }
-        }
+        
     }
 
 
@@ -32,8 +35,24 @@ public class VisObject : MonoBehaviour {
         {
             hit = true;
             Instantiate(hitEffect);
-
-            changeColor();
+        }
+       
+        if (hit)
+        {
+            if (timeToDestroy > 0)
+            {
+                timeToDestroy -= Time.deltaTime;
+                changeColor();
+            }
+            else if (timeToDestroy <= 0 && altColor.r > 1.5)
+            {
+                this.transform.gameObject.SetActive(false);
+                if (openDoor)
+                {
+                    GameObject door = this.transform.parent.gameObject;
+                    door.GetComponent<MoveObject>().OperateDoor();
+                }
+            }
         }
     }
 
@@ -43,7 +62,11 @@ public class VisObject : MonoBehaviour {
         //Get the Renderer component from the new cube
         var renderer = this.GetComponent<Renderer>();
 
+        altColor.r += colorChangeStep / 100;
+        Debug.Log("color: " + altColor.r);
+        //Assign the changed color to the material. 
+        renderer.material.color = altColor;
         //Call SetColor using the shader property name "_Color" and setting the color to red
-        renderer.material.SetColor("_Color", Color.red);
+       // renderer.material.SetColor("_Color", Color.red);
     }
 }
