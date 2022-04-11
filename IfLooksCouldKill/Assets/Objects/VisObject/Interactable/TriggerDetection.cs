@@ -16,6 +16,24 @@ public class TriggerDetection : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown("e") && isColliding)
+        {
+            Debug.Log("E pressed");
+
+            if (!pressed)
+            {
+                pressed = true;
+
+                //Note: replace with whatever action when pressed
+                Vector3 scaleChange = new Vector3(0, -0.1f, 0);
+                this.transform.parent.localScale += scaleChange;
+            }
+
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -31,20 +49,7 @@ public class TriggerDetection : MonoBehaviour
             canvas.GetComponent<EKeyInteraction>().allowKeyPress(false);
         }
 
-        if (Input.GetKeyDown("e") && isColliding)
-        {
-            Debug.Log("E pressed");
-           
-            if (!pressed)
-            {
-                pressed = true;
-
-                //Note: replace with whatever action when pressed
-                Vector3 scaleChange = new Vector3(0, -0.1f, 0);
-                this.transform.parent.localScale += scaleChange;
-            }
-            
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)

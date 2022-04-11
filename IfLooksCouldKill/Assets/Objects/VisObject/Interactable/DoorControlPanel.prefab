@@ -115,7 +115,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &8570714444059316983
 BoxCollider:
@@ -125,7 +125,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8570714444059316984}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -258,4 +258,4 @@ MonoBehaviour:
   hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
   destroyWhenHit: 0
   timeToDestroy: 3
-  altColor: {r: 0, g: 0, b: 0, a: 0}
+  openDoor: 1
