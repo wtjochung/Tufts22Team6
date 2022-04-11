@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1176800747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176800748}
+  - component: {fileID: 1176800749}
+  - component: {fileID: 1176800750}
+  m_Layer: 2
+  m_Name: PlayerTriggerDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1176800748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176800747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.5542088, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2640705375045941792}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1176800749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176800747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f385f4e0e5f0c347bc1ed3180b9403f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+--- !u!136 &1176800750
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176800747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.821346
+  m_Height: 38.02572
+  m_Direction: 1
+  m_Center: {x: -0.003693661, y: 0, z: 0}
 --- !u!1 &2640705375045941804
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,11 +71,11 @@ GameObject:
   - component: {fileID: 2640705375045941795}
   - component: {fileID: 2640705375045941794}
   - component: {fileID: 2640705375045941805}
-  - component: {fileID: 2640705375045941797}
   - component: {fileID: 2640705375045941796}
   - component: {fileID: 2640705375045941799}
   - component: {fileID: 2640705375045941798}
   - component: {fileID: 2640705375045941793}
+  - component: {fileID: 4003699583056973110}
   m_Layer: 3
   m_Name: Button
   m_TagString: Interactable
@@ -34,7 +93,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.36, z: 5.01}
   m_LocalScale: {x: 1, y: 0.15354, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1176800748}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -102,20 +162,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!136 &2640705375045941797
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2640705375045941804}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &2640705375045941796
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,7 +176,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!82 &2640705375045941799
 AudioSource:
@@ -252,12 +298,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2640705375045941804}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2042cf774a2cf4747aef34231835e897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
-  destroyWhenHit: 1
+  destroyWhenHit: 0
   timeToDestroy: 1
   openDoor: 0
+--- !u!114 &4003699583056973110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640705375045941804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a440e403595548f419573c45a79dc905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openHeight: 4.5
+  duration: 1
