@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PlayerControlTest.unity
     guid: 6a9ca6a736132f947bd0c26afd31dafa
+  - enabled: 1
+    path: Assets/Scenes/LaserEyesTest.unity
+    guid: 11a069217c011c74f8595641ed657edd
   m_configObjects: {}
