@@ -31,8 +31,10 @@ public class GameManager : MonoBehaviour {
         }
         GameObject player_light = GameObject.FindGameObjectWithTag("MainCamera");
         player_light.GetComponent<Light>().enabled = blind;
-        GameObject laser_cylinder = GameObject.FindGameObjectWithTag("Laser");
-        laser_cylinder.GetComponent<MeshRenderer>().enabled = !blind;
+        GameObject[] laser_cylinders = GameObject.FindGameObjectsWithTag("Laser");
+        foreach (GameObject laser_cylinder in laser_cylinders) {
+            laser_cylinder.GetComponent<MeshRenderer>().enabled = !blind;
+        }
         GameObject pp = GameObject.FindGameObjectWithTag("Post Processor");
         pp.GetComponent<PostProcessVolume>().enabled = !blind;
     }
