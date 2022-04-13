@@ -224,7 +224,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 271729228838816661}
-  - component: {fileID: 310705726006425128}
   - component: {fileID: 310705726006425134}
   m_Layer: 3
   m_Name: door updated
@@ -255,19 +254,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &310705726006425128
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616624708849701167}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.0599055, y: 4.690557, z: 0.64517653}
-  m_Center: {x: -2.5862706, y: 1.8452785, z: 0.18123442}
 --- !u!114 &310705726006425134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +279,7 @@ GameObject:
   - component: {fileID: 4014051804545962224}
   - component: {fileID: 5641206352251922030}
   - component: {fileID: 4273804592006527665}
+  - component: {fileID: 5576905276722080231}
   m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
@@ -364,6 +351,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5576905276722080231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135956840047713818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0559126, y: 0.0016196832, z: 0.045611452}
+  m_Center: {x: -0.023780426, y: 4.72139e-19, z: -0.00024252653}
 --- !u!1 &1276930125650476060
 GameObject:
   m_ObjectHideFlags: 0

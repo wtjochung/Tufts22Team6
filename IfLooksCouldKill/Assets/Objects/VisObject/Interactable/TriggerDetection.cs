@@ -38,6 +38,8 @@ public class TriggerDetection : MonoBehaviour
                     if (destroyWhenPressed) this.transform.gameObject.SetActive(false);
                     GameObject door = this.transform.parent.parent.gameObject;
                     door.GetComponent<MoveObject>().OperateDoor();
+
+                    canvas.GetComponent<EKeyInteraction>().allowKeyPress(false);
                 }
             }
 
