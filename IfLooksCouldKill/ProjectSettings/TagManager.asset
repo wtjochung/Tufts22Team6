@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - Light
   - Post Processor
+  - Fire
   layers:
   - Default
   - TransparentFX

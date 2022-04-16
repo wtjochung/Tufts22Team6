@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6191684485782798}
   - component: {fileID: -5532184599455336861}
-  - component: {fileID: 5029565944062473507}
+  - component: {fileID: 202102652089866949}
   m_Layer: 0
   m_Name: hitEffect
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 5
   destroyChildrenOnDeath: 1
---- !u!114 &5029565944062473507
+--- !u!114 &202102652089866949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
