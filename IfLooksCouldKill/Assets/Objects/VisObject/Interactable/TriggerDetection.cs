@@ -10,6 +10,9 @@ public class TriggerDetection : MonoBehaviour
     private bool isColliding = false;
     private bool pressed = false;
 
+    public bool openDoor = true;
+    public bool destroyWhenPressed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,15 @@ public class TriggerDetection : MonoBehaviour
                 //Note: replace with whatever action when pressed
                 Vector3 scaleChange = new Vector3(0, -0.1f, 0);
                 this.transform.parent.localScale += scaleChange;
+
+                if (openDoor)
+                {
+                    if (destroyWhenPressed) this.transform.gameObject.SetActive(false);
+                    GameObject door = this.transform.parent.parent.gameObject;
+                    door.GetComponent<MoveObject>().OperateDoor();
+
+                    canvas.GetComponent<EKeyInteraction>().allowKeyPress(false);
+                }
             }
 
         }

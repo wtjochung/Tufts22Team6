@@ -33,6 +33,7 @@ public class VisObject : MonoBehaviour {
     {
         if (!hit)
         {
+            Debug.Log("hit by laser");
             hit = true;
             Instantiate(hitEffect);
         }
@@ -41,12 +42,14 @@ public class VisObject : MonoBehaviour {
         {
             if (timeToDestroy > 0)
             {
+                Debug.Log("time to destroy: " + timeToDestroy);
                 timeToDestroy -= Time.deltaTime;
                 changeColor();
             }
-            else if (timeToDestroy <= 0 && altColor.r > 1.5)
+            else if (timeToDestroy <= 0 && altColor.r > 0.7)
             {
-                this.transform.gameObject.SetActive(false);
+                if (destroyWhenHit) this.transform.gameObject.SetActive(false);
+                Debug.Log("set inactive");
                 if (openDoor)
                 {
                     GameObject door = this.transform.parent.gameObject;

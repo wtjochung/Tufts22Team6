@@ -11,7 +11,16 @@ public class LaserManager : MonoBehaviour {
 	List<LaserBeam> lasers = new List<LaserBeam>();
 	List<GameObject> lines = new List<GameObject>();
 
-	//public GameObject hitEffect;
+	GameObject fire;
+
+	public GameObject hitEffect;
+
+	private Vector3 fireHitPosition;
+	private bool fireActive = false;
+
+	
+
+	public bool includeChildren = true;
 
 	public void AddLaser(LaserBeam laser) { 
 		lasers.Add(laser); 
@@ -31,6 +40,9 @@ public class LaserManager : MonoBehaviour {
 
 	void Awake() {
 		instance = this;
+		fire = GameObject.FindGameObjectWithTag("Fire");
+		
+		fireHitPosition = this.transform.position;
 	}
 
 	void Update() {
@@ -41,7 +53,16 @@ public class LaserManager : MonoBehaviour {
 			}
 		}
 		RemoveOldLines(linesCount);
+
+		//moveParticleSystem(fireHitPosition);
 	}
+
+	
+
+	Vector3 getFireHitPosition()
+    {
+		return fireHitPosition;
+    }
 
 	int CalcLaserLine(Vector3 startPosition, Vector3 direction, int index) {
 		RaycastHit hit;
@@ -49,7 +70,9 @@ public class LaserManager : MonoBehaviour {
 		bool intersect = Physics.Raycast(ray, out hit, maxStepDistance);		
 
 		if (!intersect) { 
-			hit.point = startPosition + direction * maxStepDistance; 
+			hit.point = startPosition + direction * maxStepDistance;
+			fire.GetComponent<moveParticleSystem>().setParticle(false);
+			fireActive = false;
 		}
 
 		unsafe {
@@ -61,7 +84,22 @@ public class LaserManager : MonoBehaviour {
 				/*Instantiate(hitEffect);
 				hit.transform.gameObject.SetActive(false);
 				*/
+				//fire.transform = hit.transform;
+				//p_system.Play(includeChildren);
+
+				if (!fireActive)
+                {
+					fireActive = true;
+					fire.GetComponent<moveParticleSystem>().setParticle(true);
+
+				}
+				
+
 				hit.transform.gameObject.GetComponent<VisObject>().HitByLaser();
+
+				fireHitPosition = hit.point;
+				fire.GetComponent<moveParticleSystem>().setDestination(fireHitPosition);
+				//p_system.transform = Vector3.MoveTowards(p_system, hit.transform, Time.deltaTime * 1f);
 			}
 			else {
 				return 1 + CalcLaserLine(hit.point, Vector3.Reflect(direction, hit.normal), index + 1);

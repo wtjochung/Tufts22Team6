@@ -14,6 +14,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 6959390927908411237}
+  - {fileID: 6757170508980575653}
+  - {fileID: 4084515023387315535}
+--- !u!114 &4084515023387315535
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  spectralLut:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  intensity:
+    overrideState: 1
+    value: 0.8
+  fastMode:
+    overrideState: 0
+    value: 0
+--- !u!114 &6757170508980575653
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: -53
+  intensityX:
+    overrideState: 0
+    value: 1
+  intensityY:
+    overrideState: 0
+    value: 1
+  centerX:
+    overrideState: 0
+    value: -1
+  centerY:
+    overrideState: 0
+    value: 0
+  scale:
+    overrideState: 0
+    value: 0.01
 --- !u!114 &6959390927908411237
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -35,16 +97,16 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.015686275, g: 0.015686275, b: 0.015686275, a: 1}
+    value: {r: 1, g: 0, b: 0, a: 1}
   center:
     overrideState: 1
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.7
+    value: 0.3
   smoothness:
     overrideState: 1
-    value: 1
+    value: 0.735
   roundness:
     overrideState: 1
     value: 1
