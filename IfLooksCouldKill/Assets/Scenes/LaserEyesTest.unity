@@ -2264,6 +2264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireEffectParent
       objectReference: {fileID: 0}
+    - target: {fileID: 4746857964155172098, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4746857964155172101, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2307,6 +2311,14 @@ PrefabInstance:
     - target: {fileID: 4746857964155172101, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746857964526668488, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746857965434163189, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
