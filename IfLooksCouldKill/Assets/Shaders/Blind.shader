@@ -7,6 +7,7 @@ Shader "Custom/BlindS" {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
+        _Radius("Radius", Range(1, 255)) = 1
     }
 
     SubShader {
@@ -25,12 +26,16 @@ Shader "Custom/BlindS" {
 
         struct Input { //Don't ask me why this is its own struct
             float2 uv_MainTex;
+            float2 uv:TEXCOORD0;
+            float4 pos:SV_POSITION;
         };
 
         half _Glossiness;
         half _Metallic;
         fixed4 _Color;
         uniform int _Blind;
+        float _Radius;
+        float2 screenPos:TEXCOORD2;
 
         UNITY_INSTANCING_BUFFER_START(Props)
             // put more per-instance properties here
@@ -45,14 +50,18 @@ Shader "Custom/BlindS" {
                 o.Alpha = 1;
                 o.Metallic = 0.5; //Back when Blind was a material rather than a Shader, these values seemed to work.
                 o.Smoothness = 0.0;
-
             }
             else {
-                fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-                o.Albedo = c.rgb;
-                o.Metallic = _Metallic;
-                o.Smoothness = _Glossiness;
-                o.Alpha = c.a;
+                if ((screenPos.x * screenPos.x) + (screenPos.y * screenPos.y) >= _Radius * _Radius) {
+
+                } 
+                else {
+                    fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+                    o.Albedo = c.rgb;
+                    o.Metallic = _Metallic;
+                    o.Smoothness = _Glossiness;
+                    o.Alpha = c.a;
+                }
             }
         }
         ENDCG
