@@ -1363,10 +1363,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20793941622941012, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20793941622941012, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2933269660485579701, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
       propertyPath: m_TagString
       value: Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 2948436637862416998, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: 586f3707b62ca824c91ab629205a46b7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
 --- !u!1 &1230597688
@@ -3372,6 +3384,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6656374937403704282, guid: 4b8caa6025a73d64a9422b92ad8181bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656374937403704283, guid: 4b8caa6025a73d64a9422b92ad8181bd, type: 3}
+      propertyPath: isGlobal
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
