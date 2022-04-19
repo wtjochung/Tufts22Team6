@@ -35,7 +35,6 @@ public class Level1Dialogue : MonoBehaviour
 
         allowKey = true;
       //  canvas.GetComponent<EKeyInteraction>().allowKeyPress(allowKey, "[E] to continue");
-
        
     }
 
@@ -65,19 +64,12 @@ public class Level1Dialogue : MonoBehaviour
         }
         else if (primeInt == 6)
         {
+            Char1speech.color = new Color32(0, 0, 0, 255);
             Char1speech.text = "There should be a switch on the side of your googles. Can you feel it?";
-        }
-        else if (primeInt == 7)
-        {
-            GameManager.toggleAllowed = true;
-            // allowKey = true;
-            // canvas.GetComponent<EKeyInteraction>().allowKeyPress(allowKey, "Click to disable goggles.");
             prompt.text = "Click to disable goggles";
-
-           // allowKey = false;
-
+            GameManager.toggleAllowed = true;
         }
-        else if (primeInt > 7 && primeInt < 100 && GameManager.blind == false)
+        else if (primeInt > 6 && primeInt < 100 && GameManager.blind == false)
         {
             playerOpensEye = true;
 
@@ -86,6 +78,7 @@ public class Level1Dialogue : MonoBehaviour
 
             prompt.text = "[E] to continue";
 
+            Char1speech.color = new Color32(0, 0, 0, 255);
             Char1speech.text = "Bloody genial! Be careful where you point that laser.";
 
             primeInt = 100;
@@ -93,12 +86,13 @@ public class Level1Dialogue : MonoBehaviour
         }
         else if (primeInt > 100 && playerOpensEye && !doorOpened)
         {
+            Char1speech.color = new Color32(0, 0, 0, 255);
             Char1speech.text = "You could kill someone if you aren¡¯t careful. Let¡¯s kill the door.";
            
 
-        } else if (primeInt > 100 && doorOpened) {
-
-            Char1speech.text = "Beautiful. Let¡¯s break you out of this piehole.";
+        } else if (primeInt > 100 && doorOpened && !finalLine) {
+            Char1speech.color = new Color32(0, 0, 0, 255);
+            Char1speech.text = "Beautiful. Let¡¯s break you out of this piehole--";
             finalLine = true;
         }
         else if (primeInt > 100 && doorOpened && finalLine)

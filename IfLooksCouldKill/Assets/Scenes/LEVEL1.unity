@@ -639,6 +639,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 390849278, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
+      propertyPath: m_Text
+      value: '[E] to interact'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519244756, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
+      propertyPath: prompt
+      value: 
+      objectReference: {fileID: 3303283242017914462}
+    - target: {fileID: 1519244756, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
+      propertyPath: Char1name
+      value: 
+      objectReference: {fileID: 3303283242017914464}
+    - target: {fileID: 1519244756, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
+      propertyPath: Char1speech
+      value: 
+      objectReference: {fileID: 3303283242017914463}
+    - target: {fileID: 1519244756, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 3303283242017914465}
+    - target: {fileID: 1519244756, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
+      propertyPath: isLevel1NPC
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3935310048913142104, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -703,7 +727,12 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 3303283242017914460}
-    m_RemovedComponents: []
+    - target: {fileID: 3935310049940342387, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
+      propertyPath: prompt
+      value: 
+      objectReference: {fileID: 3303283242017914462}
+    m_RemovedComponents:
+    - {fileID: 390849278, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
 --- !u!1 &347614334 stripped
 GameObject:
@@ -890,6 +919,27 @@ Transform:
   m_Father: {fileID: 1230597689}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &519940935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3935310049940342388, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
+  m_PrefabInstance: {fileID: 242832965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &519940936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519940935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94400b0864988446afbfbf6718c779c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueBox: {fileID: 3303283242017914465}
+  Char1name: {fileID: 3303283242017914464}
+  Char1speech: {fileID: 3303283242017914463}
+  prompt: {fileID: 3303283242017914462}
 --- !u!1 &535339985
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,6 +4107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: door
       objectReference: {fileID: 0}
+    - target: {fileID: 616624708849701167, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1276930125650476060, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4231,6 +4285,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 28082839, guid: 7b75f1060baab194b9fa6ab3716a914d, type: 3}
+      propertyPath: m_Name
+      value: PressEPrompt_center
+      objectReference: {fileID: 0}
     - target: {fileID: 3303283241024628225, guid: 7b75f1060baab194b9fa6ab3716a914d, type: 3}
       propertyPath: m_Name
       value: Canvas

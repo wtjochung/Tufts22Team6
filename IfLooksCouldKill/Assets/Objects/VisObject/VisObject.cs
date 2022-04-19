@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VisObject : MonoBehaviour {
 
@@ -14,6 +15,14 @@ public class VisObject : MonoBehaviour {
     private float colorChangeStep;
 
     public bool openDoor = false;
+
+    public GameObject DialogueBox;
+    public Text Char1name;
+    public Text Char1speech;
+
+    public Text prompt;
+
+    public bool isLevel1NPC = false;
 
     private void Start()
     {
@@ -42,6 +51,12 @@ public class VisObject : MonoBehaviour {
         {
             if (timeToDestroy > 0)
             {
+                if (isLevel1NPC)
+                {
+                    DialogueBox.SetActive(true);
+                    Char1speech.color = new Color32(50, 0, 0, 200);
+                    Char1speech.text = "ARRRRRR!!!...thank you¡­";
+                }
              //   Debug.Log("time to destroy: " + timeToDestroy);
                 timeToDestroy -= Time.deltaTime;
                 changeColor();
@@ -49,12 +64,19 @@ public class VisObject : MonoBehaviour {
             else if (timeToDestroy <= 0 && altColor.r > 0.7)
             {
                 if (destroyWhenHit) this.transform.gameObject.SetActive(false);
-               // Debug.Log("set inactive");
+                if (isLevel1NPC)
+                {
+                    DialogueBox.SetActive(false);
+                    Char1speech.text = "...";
+                }
+                // Debug.Log("set inactive");
                 if (openDoor)
                 {
                     GameObject door = this.transform.parent.gameObject;
                     door.GetComponent<MoveObject>().OperateDoor();
                     FindObjectOfType<Level1Dialogue>().playerOpenedDoor();
+
+                    
                 }
             }
         }

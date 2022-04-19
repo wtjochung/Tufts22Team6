@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 //GameManager: Contains some stuff that all objects may need access to
 public class GameManager : MonoBehaviour {
     public static bool blind;
     public static bool toggleAllowed = false;
 
+    private static bool openedEye = false;
+    public static GameObject prompt;
+
     void Start() {
+
         blind = true;
         set_state(blind);
 
+      //  prompt = GameObject.Find("PressEPrompt_center");
     }
 
     void Update() {
@@ -20,12 +26,19 @@ public class GameManager : MonoBehaviour {
 
     public static void toggle_blind()
     {
+        if (!openedEye)
+        {
+            openedEye = true;
+            if (prompt != null)
+            {
+            //    prompt.GetComponent<Text>().text = "[E] to continue";
+            }
+        }
 
         if (toggleAllowed)
         {
             blind = !blind;
             set_state(blind);
-
         }
     }
 
