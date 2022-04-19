@@ -54,6 +54,7 @@ public class VisObject : MonoBehaviour {
                 {
                     GameObject door = this.transform.parent.gameObject;
                     door.GetComponent<MoveObject>().OperateDoor();
+                    FindObjectOfType<Level1Dialogue>().playerOpenedDoor();
                 }
             }
         }
