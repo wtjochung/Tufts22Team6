@@ -39,7 +39,7 @@ public class TriggerDetection : MonoBehaviour
                     GameObject door = this.transform.parent.parent.gameObject;
                     door.GetComponent<MoveObject>().OperateDoor();
 
-                    canvas.GetComponent<EKeyInteraction>().allowKeyPress(false);
+                    canvas.GetComponent<EKeyInteraction>().allowKeyPress(false, "");
                 }
             }
 
@@ -58,7 +58,7 @@ public class TriggerDetection : MonoBehaviour
         else
         {
             isColliding = false;
-            canvas.GetComponent<EKeyInteraction>().allowKeyPress(false);
+            canvas.GetComponent<EKeyInteraction>().allowKeyPress(false, "");
         }
 
         
@@ -69,7 +69,7 @@ public class TriggerDetection : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             triggerStay = true;
-            canvas.GetComponent<EKeyInteraction>().allowKeyPress(true);
+            canvas.GetComponent<EKeyInteraction>().allowKeyPress(true, "");
           //  Debug.Log("player trigger enter button");
         }
     }

@@ -53,7 +53,7 @@ Shader "Custom/Blind" {
 			}
 			else {
 				float4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-				o.Albedo = c.rgb;
+				o.Albedo = c.rgba;
 				o.Metallic = _Metallic;
 				o.Smoothness = _Glossiness;
 				o.Alpha = c.a;
