@@ -8,13 +8,13 @@ public class EKeyInteraction : MonoBehaviour
 
     public bool allowEKey = false;
     public Text eKeyPrompt;
-
+    public string defaultPrompt = "[E] to interact";
     
 
     // Start is called before the first frame update
     void Start()
     {
-        eKeyPrompt.text = "";
+       // eKeyPrompt.text = "";
     }
 
     // Update is called once per frame
@@ -23,12 +23,17 @@ public class EKeyInteraction : MonoBehaviour
         
     }
 
-    public void allowKeyPress(bool b)
+    public void allowKeyPress(bool b, string prompt)
     {
         allowEKey = b;
+        if (prompt == "")
+        {
+            prompt = defaultPrompt;
+        }
+
         if (allowEKey)
         {
-            eKeyPrompt.text = "Press E to Interact";
+            eKeyPrompt.text = prompt;
         } else
         {
             eKeyPrompt.text = "";
