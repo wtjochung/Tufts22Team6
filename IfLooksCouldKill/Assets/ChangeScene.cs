@@ -38,7 +38,7 @@ public class ChangeScene: MonoBehaviour
         float tick = 0f;
         while (a.color != endColor)
         {
-            tick += Time.deltaTime * 0.001f;
+            tick += Time.deltaTime * 0.05f;
             a.color = Color.Lerp(a.color, endColor, tick);
             yield return null;
         }
