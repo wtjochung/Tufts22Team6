@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PlayerControlTest.unity
     guid: 6a9ca6a736132f947bd0c26afd31dafa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartMenu/StartMenu.unity
     guid: 9453e7695ffb5c14a92b69f525c0dff8
   - enabled: 0
