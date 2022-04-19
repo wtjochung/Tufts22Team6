@@ -81,25 +81,20 @@ public class LaserManager : MonoBehaviour {
 		
 		if (intersect) {
 			if (hit.transform.gameObject.CompareTag("Interactable")) {
-				/*Instantiate(hitEffect);
-				hit.transform.gameObject.SetActive(false);
-				*/
-				//fire.transform = hit.transform;
-				//p_system.Play(includeChildren);
 
+				//activate the fire particle system
 				if (!fireActive)
                 {
 					fireActive = true;
 					fire.GetComponent<moveParticleSystem>().setParticle(true);
 
 				}
-				
 
 				hit.transform.gameObject.GetComponent<VisObject>().HitByLaser();
 
+				//move the fire particle system to the hit point
 				fireHitPosition = hit.point;
 				fire.GetComponent<moveParticleSystem>().setDestination(fireHitPosition);
-				//p_system.transform = Vector3.MoveTowards(p_system, hit.transform, Time.deltaTime * 1f);
 			}
 			else {
 				return 1 + CalcLaserLine(hit.point, Vector3.Reflect(direction, hit.normal), index + 1);

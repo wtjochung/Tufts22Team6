@@ -2134,30 +2134,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 5576905276722080231, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
 --- !u!4 &1158232459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 271729228838816661, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
   m_PrefabInstance: {fileID: 1158232458}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1158232460 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1135956840047713818, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
-  m_PrefabInstance: {fileID: 1158232458}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1158232461
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158232460}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0559126, y: 0.0016196832, z: 0.045611452}
-  m_Center: {x: -0.023780426, y: 4.72139e-19, z: -0.00024252653}
 --- !u!1001 &1216881239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3365,6 +3348,34 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4746857964526668491, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746857964526668491, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746857964526668491, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 0.7856598
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746857964526668491, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.60732985
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746857964526668491, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -0.1709617
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746857964526668491, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.1592477
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746857964526668491, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -0.1709617
+      objectReference: {fileID: 0}
     - target: {fileID: 4746857965434163189, guid: 36918afccea0b244aacf4faed49957e1, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -4254,30 +4265,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 5576905276722080231, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
 --- !u!4 &543450652600971952 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 271729228838816661, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
   m_PrefabInstance: {fileID: 310705727364364581}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &832149485277898559 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1135956840047713818, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
-  m_PrefabInstance: {fileID: 310705727364364581}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &832149485277898560
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832149485277898559}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0559126, y: 0.0016196832, z: 0.045611452}
-  m_Center: {x: -0.023780426, y: 4.72139e-19, z: -0.00024252653}
 --- !u!1001 &3303283242017914459
 PrefabInstance:
   m_ObjectHideFlags: 0
