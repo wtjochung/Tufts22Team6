@@ -1,62 +1,69 @@
 Shader "Custom/Blur"
 {
-    Properties {
-        _Color ("Color", Color) = (1,1,1,1)
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Glossiness ("Smoothness", Range(0,1)) = 0.5
-        _Metallic ("Metallic", Range(0,1)) = 0.0
-        _Radius("Radius", Range(1, 1280)) = 1
-    }
-    
-    SubShader {
-        Tags { "RenderType"="Opaque" }
-        LOD 200
+	Properties
+	{
+		_MainTex ("Texture", 2D) = "white" {}
+		_Radius("Radius", Range(1, 100)) = 1
+		_Intensity("Intensity", Range(1, 100)) = 1
+	}
+	SubShader
+	{
+		// No culling or depth
+		Cull Off ZWrite Off ZTest Always
 
-        CGPROGRAM
-        #pragma surface surf Standard fullforwardshadows
-        #pragma target 3.0
+		Pass
+		{
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
 
-        sampler2D _MainTex;
+			#include "UnityCG.cginc"
 
-		struct Input {
-			float2 uv_MainTex;
-			float4 uv_grab : TEXCOORD0;
-			float4 proj;
-			float4 screenPos;
-		};
+			struct appdata
+			{
+				float4 vertex : POSITION;
+				float2 uv : TEXCOORD0;
+			};
 
-        half _Glossiness;
-        half _Metallic;
-        fixed4 _Color;
-        float _Radius;
+			struct v2f {
+				float2 uv : TEXCOORD0;
+				float4 vertex : SV_POSITION;
+				float4 screenPos : TEXCOORD1;
+			};
 
-        UNITY_INSTANCING_BUFFER_START(Props)
-            // put more per-instance properties here
-        UNITY_INSTANCING_BUFFER_END(Props)
+			sampler2D _MainTex;
+			float _Radius;
+			float _Intensity;
 
-        void surf (Input IN, inout SurfaceOutputStandard o) {
-            float2 coords = IN.screenPos.xy / IN.screenPos.w; //These coords are 0 to 1
-			coords.x = (coords.x - 0.5) * 1280 * 2; //This puts them in -1280 to 1280
-			coords.y = (coords.y - 0.5) * 720 * 2; //ditto for 720
-			float4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-			if ((coords.x * coords.x) + (coords.y * coords.y) >=  (_Radius * _Radius)) {
-				float2 offset = 1.0 / _ScreenParams.xy; 
-				c += tex2D(_MainTex, IN.uv_MainTex + float2(offset.x, offset.y)) * _Color;
-				c += tex2D(_MainTex, IN.uv_MainTex + float2(-offset.x, offset.y)) * _Color;
-				c += tex2D(_MainTex, IN.uv_MainTex + float2(-offset.x, -offset.y)) * _Color;
-				c += tex2D(_MainTex, IN.uv_MainTex + float2(offset.x, -offset.y)) * _Color;
-				c += tex2D(_MainTex, IN.uv_MainTex + float2(offset.x, 0.0)) * _Color;
-				c += tex2D(_MainTex, IN.uv_MainTex + float2(-offset.x, 0.0)) * _Color;
-				c += tex2D(_MainTex, IN.uv_MainTex + float2(0.0, offset.y)) * _Color;
-				c += tex2D(_MainTex, IN.uv_MainTex + float2(0.0, -offset.y)) * _Color;
-				c /= 9;
+			v2f vert (appdata v) {
+				v2f o;
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				o.screenPos = ComputeScreenPos(o.vertex);
+				o.uv = v.uv;
+				return o;
 			}
-			o.Albedo = c.rgb;
-			o.Metallic = _Metallic;
-			o.Smoothness = _Glossiness;
-			o.Alpha = c.a;
-        }
-        ENDCG
-    }
-    FallBack "Diffuse"
+
+			fixed4 frag (v2f i) : SV_Target {
+				float2 coords = i.screenPos.xy / i.screenPos.w; //These coords are 0 to 1
+				coords.x = (coords.x - 0.5) * 128; //This puts them in -100 to 100
+				coords.y = (coords.y - 0.5) * 72;
+				float4 col = tex2D(_MainTex, i.uv);
+				float circle_coord = (coords.x * coords.x) + (coords.y * coords.y);
+				if (circle_coord >= _Radius * _Radius) {
+					float2 offset = _Intensity / _ScreenParams.xy;
+					col += tex2D(_MainTex, i.uv + float2(offset.x, offset.y));
+					col += tex2D(_MainTex, i.uv + float2(-offset.x, offset.y));
+					col += tex2D(_MainTex, i.uv + float2(-offset.x, -offset.y));
+					col += tex2D(_MainTex, i.uv + float2(offset.x, -offset.y));
+					col += tex2D(_MainTex, i.uv + float2(offset.x, 0.0));
+					col += tex2D(_MainTex, i.uv + float2(-offset.x, 0.0));
+					col += tex2D(_MainTex, i.uv + float2(0.0, offset.y));
+					col += tex2D(_MainTex, i.uv + float2(0.0, -offset.y));
+					col /= 9;
+				}
+				return col;
+			}
+			ENDCG
+		}
+	}
 }
