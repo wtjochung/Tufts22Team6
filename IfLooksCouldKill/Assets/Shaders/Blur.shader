@@ -1,5 +1,4 @@
-Shader "Custom/Blur"
-{
+Shader "Custom/Blur" {
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
@@ -33,7 +32,7 @@ Shader "Custom/Blur"
 
 			sampler2D _MainTex;
 			float _Radius;
-			float _Intensity;
+			int _Intensity;
 
 			v2f vert (appdata v) {
 				v2f o;
@@ -44,22 +43,24 @@ Shader "Custom/Blur"
 			}
 
 			fixed4 frag (v2f i) : SV_Target {
-				float2 coords = i.screenPos.xy / i.screenPos.w; //These coords are 0 to 1
-				coords.x = (coords.x - 0.5) * 128; //This puts them in -100 to 100
-				coords.y = (coords.y - 0.5) * 72;
+				float2 coords = ((i.screenPos.xy / i.screenPos.w) - 0.5) * (128, 72);
 				float4 col = tex2D(_MainTex, i.uv);
-				float circle_coord = (coords.x * coords.x) + (coords.y * coords.y);
-				if (circle_coord >= _Radius * _Radius) {
-					float2 offset = _Intensity / _ScreenParams.xy;
-					col += tex2D(_MainTex, i.uv + float2(offset.x, offset.y));
-					col += tex2D(_MainTex, i.uv + float2(-offset.x, offset.y));
-					col += tex2D(_MainTex, i.uv + float2(-offset.x, -offset.y));
-					col += tex2D(_MainTex, i.uv + float2(offset.x, -offset.y));
-					col += tex2D(_MainTex, i.uv + float2(offset.x, 0.0));
-					col += tex2D(_MainTex, i.uv + float2(-offset.x, 0.0));
-					col += tex2D(_MainTex, i.uv + float2(0.0, offset.y));
-					col += tex2D(_MainTex, i.uv + float2(0.0, -offset.y));
-					col /= 9;
+				float radius_diff = (((coords.x * coords.x) + (coords.y * coords.y))
+				 - (_Radius * _Radius)); //Full disclosure I have no idea what scale these coords are
+				 //I'm just throwing numbers at it until it works
+				if (radius_diff >= 0.0) {
+					for (int idx = 0; idx < _Intensity && idx < 100; idx++) {
+						float2 offset = (((radius_diff / (128, 72)) * (float)idx) / _ScreenParams.xy);
+						col += tex2D(_MainTex, i.uv + float2(offset.x, offset.y));
+						col += tex2D(_MainTex, i.uv + float2(-offset.x, offset.y));
+						col += tex2D(_MainTex, i.uv + float2(-offset.x, -offset.y));
+						col += tex2D(_MainTex, i.uv + float2(offset.x, -offset.y));
+						col += tex2D(_MainTex, i.uv + float2(offset.x, 0.0));
+						col += tex2D(_MainTex, i.uv + float2(-offset.x, 0.0));
+						col += tex2D(_MainTex, i.uv + float2(0.0, offset.y));
+						col += tex2D(_MainTex, i.uv + float2(0.0, -offset.y));
+					}
+					col /= (8 * _Intensity) + 1;
 				}
 				return col;
 			}
