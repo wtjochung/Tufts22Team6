@@ -4279,10 +4279,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 28082839, guid: 7b75f1060baab194b9fa6ab3716a914d, type: 3}
-      propertyPath: m_Name
-      value: PressEPrompt_center
-      objectReference: {fileID: 0}
     - target: {fileID: 3303283241024628225, guid: 7b75f1060baab194b9fa6ab3716a914d, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -4369,10 +4365,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3303283241024628229, guid: 7b75f1060baab194b9fa6ab3716a914d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6269611653762024348, guid: 7b75f1060baab194b9fa6ab3716a914d, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
