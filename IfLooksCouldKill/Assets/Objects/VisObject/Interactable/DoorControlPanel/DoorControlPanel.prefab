@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8570714444059316983}
   - component: {fileID: 1681464289670050423}
   - component: {fileID: 774345613112295764}
-  - component: {fileID: 8163274520274901696}
+  - component: {fileID: -796013641294321835}
   m_Layer: 3
   m_Name: DoorControlPanel
   m_TagString: Interactable
@@ -243,7 +243,7 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!114 &8163274520274901696
+--- !u!114 &-796013641294321835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,10 +252,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8570714444059316984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2042cf774a2cf4747aef34231835e897, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f66ee66e61f214b89a3888eba69bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
-  destroyWhenHit: 0
+  destroyWhenHit: 1
   timeToDestroy: 3
-  openDoor: 1

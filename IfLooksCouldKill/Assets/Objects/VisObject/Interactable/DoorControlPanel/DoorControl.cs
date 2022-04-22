@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchedByLaser : MonoBehaviour
+public class DoorControl : VisObject
 {
-    
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +16,9 @@ public class TouchedByLaser : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other) {
-		if (!GameManager.blind) {
-            if (other.gameObject.tag == "Laser") {
-                gameObject.SetActive(false);
-            }
-        }
+    new void laser_end_hit_event() {
+        GameObject door = this.transform.parent.gameObject;
+        door.GetComponent<MoveObject>().OperateDoor();
+        FindObjectOfType<Level1Dialogue>().playerOpenedDoor();
     }
 }

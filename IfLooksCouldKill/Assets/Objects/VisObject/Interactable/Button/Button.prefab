@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  openDoor: 1
+  destroyWhenPressed: 0
 --- !u!136 &1176800750
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -74,8 +76,8 @@ GameObject:
   - component: {fileID: 2640705375045941796}
   - component: {fileID: 2640705375045941799}
   - component: {fileID: 2640705375045941798}
-  - component: {fileID: 2640705375045941793}
   - component: {fileID: 4003699583056973110}
+  - component: {fileID: 2135529959270298859}
   m_Layer: 3
   m_Name: Button
   m_TagString: Interactable
@@ -291,22 +293,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!114 &2640705375045941793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2640705375045941804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2042cf774a2cf4747aef34231835e897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
-  destroyWhenHit: 0
-  timeToDestroy: 1
-  openDoor: 0
 --- !u!114 &4003699583056973110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,3 +307,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openHeight: 4.5
   duration: 1
+--- !u!114 &2135529959270298859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640705375045941804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad06ae4e51cdf34bb91ae288ec70dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
+  destroyWhenHit: 1
+  timeToDestroy: 3

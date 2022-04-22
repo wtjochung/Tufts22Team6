@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 3935310048913142109}
   - component: {fileID: 1519244755}
   - component: {fileID: 1519244756}
+  - component: {fileID: 3838448716104150975}
   m_Layer: 3
   m_Name: NPC
   m_TagString: Interactable
@@ -229,6 +230,24 @@ MonoBehaviour:
   hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
   destroyWhenHit: 1
   timeToDestroy: 5
+--- !u!114 &3838448716104150975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935310048913142108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff4c5930c7552345a2adb5740035c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
+  destroyWhenHit: 1
+  timeToDestroy: 3
+  DialogueBox: {fileID: 0}
+  speech: {fileID: 0}
+  prompt: {fileID: 0}
 --- !u!1 &3935310049940342388
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbe4fc224bbdaa458ebdfb75c06109c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  prompt: {fileID: 0}
 --- !u!102 &390849278
 TextMesh:
   serializedVersion: 3
