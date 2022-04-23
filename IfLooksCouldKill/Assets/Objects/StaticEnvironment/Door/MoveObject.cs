@@ -19,8 +19,7 @@ public class MoveObject : MonoBehaviour
        
     }
 
-    public void OperateDoor()
-    {
+    public void OperateDoor() {
         StopAllCoroutines();
         if (!doorOpen)
         {

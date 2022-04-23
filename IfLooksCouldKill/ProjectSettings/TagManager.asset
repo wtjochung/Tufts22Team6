@@ -10,6 +10,7 @@ TagManager:
   - Light
   - Post Processor
   - Fire
+  - Door
   layers:
   - Default
   - TransparentFX

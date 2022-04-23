@@ -5,8 +5,8 @@ using UnityEngine;
 public class DoorControl : VisObject
 {
     // Start is called before the first frame update
-    void Start() {
-        
+    new void Start() {
+        base.Start();
     }
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class DoorControl : VisObject
     }
 
     public override void laser_end_hit_event() {
-        GameObject door = this.transform.parent.gameObject;
+        GameObject door = base.transform.parent.gameObject;
         door.GetComponent<MoveObject>().OperateDoor();
         FindObjectOfType<Level1Dialogue>().playerOpenedDoor();
     }

@@ -9,8 +9,8 @@ public class NPC : VisObject {
 
     public Text prompt;
 
-    void Start() {
-        
+    new void Start() {
+        base.Start();
     }
 
     void Update() {
