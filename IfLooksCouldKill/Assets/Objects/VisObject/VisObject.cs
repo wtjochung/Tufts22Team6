@@ -24,15 +24,15 @@ public class VisObject : MonoBehaviour {
         
     }
 
-    public void laser_start_hit_event() {
+    public virtual void laser_start_hit_event() {
 
     }
 
-    public void laser_hit_event() {
+    public virtual void laser_hit_event() {
 
     }
 
-    public void laser_end_hit_event() {
+    public virtual void laser_end_hit_event() {
 
     }
 
@@ -50,9 +50,11 @@ public class VisObject : MonoBehaviour {
                 timeToDestroy -= Time.deltaTime;
                 changeColor();
             }
-            else if (timeToDestroy <= 0 && altColor.r > 0.7) {
+            else {
                 laser_end_hit_event();
-                if (destroyWhenHit) this.transform.gameObject.SetActive(false);
+                if (destroyWhenHit) {
+                    this.gameObject.SetActive(false);
+                }
             }
         }
     }

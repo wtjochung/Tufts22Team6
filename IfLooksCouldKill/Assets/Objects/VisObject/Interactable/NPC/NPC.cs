@@ -17,13 +17,13 @@ public class NPC : VisObject {
         
     }
 
-    new void laser_hit_event() {
+    public override void laser_hit_event() {
         DialogueBox.SetActive(true);
         speech.color = new Color32(50, 0, 0, 200);
         speech.text = "ARRRRRR!!!...thank you!";
     }
 
-    new void laser_end_hit_event() {
+    public override void laser_end_hit_event() {
         DialogueBox.SetActive(false);
         speech.text = "...";
     }

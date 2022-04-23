@@ -256,5 +256,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
-  destroyWhenHit: 1
+  destroyWhenHit: 0
   timeToDestroy: 3
