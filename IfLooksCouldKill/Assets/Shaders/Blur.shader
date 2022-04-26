@@ -10,8 +10,7 @@ Shader "Custom/Blur" {
 		// No culling or depth
 		Cull Off ZWrite Off ZTest Always
 
-		Pass
-		{
+		Pass {
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -31,7 +30,7 @@ Shader "Custom/Blur" {
 			};
 
 			sampler2D _MainTex;
-			float _Radius;
+			half _Radius;
 			int _Intensity;
 
 			v2f vert (appdata v) {
@@ -44,8 +43,8 @@ Shader "Custom/Blur" {
 
 			fixed4 frag (v2f i) : SV_Target {
 				float2 coords = ((i.screenPos.xy / i.screenPos.w) - 0.5) * (128, 72);
-				float4 col = tex2D(_MainTex, i.uv);
-				float radius_diff = (((coords.x * coords.x) + (coords.y * coords.y))
+				half4 col = tex2D(_MainTex, i.uv);
+				fixed radius_diff = (((coords.x * coords.x) + (coords.y * coords.y))
 				 - (_Radius * _Radius)); //Full disclosure I have no idea what scale these coords are
 				 //I'm just throwing numbers at it until it works
 				if (radius_diff >= 0.0) {
