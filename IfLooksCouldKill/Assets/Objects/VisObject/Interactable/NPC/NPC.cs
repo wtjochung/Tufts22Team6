@@ -18,6 +18,7 @@ public class NPC : VisObject {
     }
 
     public override void laser_hit_event() {
+        Debug.Log("hit in npc");
         DialogueBox.SetActive(true);
         speech.color = new Color32(50, 0, 0, 200);
         speech.text = "ARRRRRR!!!...thank you!";

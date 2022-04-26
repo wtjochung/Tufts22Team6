@@ -30,7 +30,7 @@ public class VisObject : MonoBehaviour {
 	}
 
 	public virtual void laser_hit_event() {
-
+		Debug.Log("hit in visobject");
 	}
 
 	public virtual void laser_end_hit_event() {
@@ -46,6 +46,7 @@ public class VisObject : MonoBehaviour {
 	   
 		if (timeToDestroy > 0) {
 			laser_hit_event();
+			Debug.Log("laser hit event called");
 			timeToDestroy -= Time.deltaTime;
 			changeColor();
 		}
