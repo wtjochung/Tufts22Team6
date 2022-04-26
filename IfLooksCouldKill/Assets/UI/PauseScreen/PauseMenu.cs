@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     public string sceneName;
     string currentSceneName;
     public GameObject player;
+   
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         currentSceneName = currentScene.name;
 
         player = GameObject.FindGameObjectWithTag("Player");
+       
     }
 
     void Update()
@@ -53,18 +55,19 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameisPaused = true;
-        player.SetActive(false);
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+       // player.SetActive(false);
+        
     }
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
      
-        settingsMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameisPaused = false;
 
-        player.SetActive(true);
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
     }
 
