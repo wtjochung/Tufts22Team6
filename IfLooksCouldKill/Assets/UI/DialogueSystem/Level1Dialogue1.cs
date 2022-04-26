@@ -48,7 +48,7 @@ public class Level1Dialogue1 : MonoBehaviour
             DialogueManager.GetComponent<Level1Dialogue>().endDialogue();
             DialogueBox.SetActive(true);
             Char1speech.color = new Color32(50, 0, 0, 200);
-            Char1speech.text = "Hello? Is someone¡­there?";
+            Char1speech.text = "Hello? Is someone...there?";
             Debug.Log("prime int " + primeInt + "dialogue");
         }
         else if (primeInt == 2)
@@ -66,13 +66,13 @@ public class Level1Dialogue1 : MonoBehaviour
         {
             Char1speech.color = new Color32(50, 0, 0, 200);
             DialogueBox.SetActive(true);
-            Char1speech.text = "Is that¡­Artie? Oh no. (cough) ";
+            Char1speech.text = "Is that...Artie? Oh no. (cough) ";
         }
         else if (primeInt == 5)
         {
            // Char1speech.color = new Color32(0, 0, 0, 255);
             DialogueBox.SetActive(true);
-            Char1speech.text = "What I mean is¡­keep your wits about you, friend. Uncle Artie doesn¡¯t usually take this kindly to people like you.";
+            Char1speech.text = "What I mean is...keep your wits about you, friend. Uncle Artie doesn¡¯t usually take this kindly to people like you.";
         }
         else if (primeInt == 6)
         {
