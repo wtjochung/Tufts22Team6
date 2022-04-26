@@ -20,7 +20,8 @@ public class Level1Dialogue : MonoBehaviour
 
     private bool playerOpensEye = false;
     private bool doorOpened = false;
-    private bool finalLine;
+    private bool finalLine = false;
+    private bool end = false;
 
     // Start is called before the first frame update
     void Start()
@@ -95,12 +96,13 @@ public class Level1Dialogue : MonoBehaviour
             Char1speech.text = "Beautiful. Let¡¯s break you out of this piehole--";
             finalLine = true;
         }
-        else if (primeInt > 100 && doorOpened && finalLine)
+        else if (primeInt > 100 && doorOpened && finalLine && !end)
         {
             DialogueBox.SetActive(false);
             Char1speech.text = "";
             prompt.text = "";
-        }
+            end = true;
+        } 
     }
 
         void Update()
@@ -117,5 +119,17 @@ public class Level1Dialogue : MonoBehaviour
     public void playerOpenedDoor()
     {
         doorOpened = true;
+    }
+
+    public void endDialogue()
+    {
+        primeInt = 200;
+        playerOpensEye = true;
+        doorOpened = true;
+        finalLine = true;
+        end = true;
+
+        DialogueBox.SetActive(false);
+        Char1speech.text = "";
     }
 }
