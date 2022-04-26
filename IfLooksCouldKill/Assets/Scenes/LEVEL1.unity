@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4548,15 +4548,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7117430563422499279, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7053638
+      value: -0.68975145
       objectReference: {fileID: 0}
     - target: {fileID: 7117430563422499279, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70884556
+      value: 0.72404623
       objectReference: {fileID: 0}
     - target: {fileID: 7117430563422499279, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.282
+      value: 267.221
       objectReference: {fileID: 0}
     - target: {fileID: 7313490580850539003, guid: 1a45fd88dc719234e93068c739cdd38a, type: 3}
       propertyPath: destroyWhenHit
