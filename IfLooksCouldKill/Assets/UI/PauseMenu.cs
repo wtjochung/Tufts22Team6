@@ -63,7 +63,9 @@ public class PauseMenu : MonoBehaviour
         settingsMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameisPaused = false;
+
         player.SetActive(true);
+
     }
 
     public void Restart()
