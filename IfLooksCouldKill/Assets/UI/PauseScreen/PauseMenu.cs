@@ -68,7 +68,6 @@ public class PauseMenu : MonoBehaviour
         GameisPaused = false;
 
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-
     }
 
     public void Restart()
