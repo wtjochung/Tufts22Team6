@@ -3352,34 +3352,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4135345722410207218, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135345722410207218, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135345722410207218, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4135345722962234107}
-    - target: {fileID: 4135345722410207218, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135345722410207218, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135345722410207218, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SetVolume, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135345722410207218, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4135345722410207228, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
       propertyPath: m_Name
       value: Slider
@@ -3480,23 +3452,8 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8174561025825151324, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
-      propertyPath: mix
-      value: 
-      objectReference: {fileID: 24100000, guid: f6182ca384bce964281f0461c4ca43ca, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
---- !u!114 &4135345722962234107 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8174561025825151324, guid: 61f9a1159de6ca641a82fc23df92ed1b, type: 3}
-  m_PrefabInstance: {fileID: 4135345722962234106}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b1bb6e2221428f4ebc28de550295d6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6418204562284508784
 PrefabInstance:
   m_ObjectHideFlags: 0
