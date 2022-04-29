@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d93045d3a09eb1439d6734febd63b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  default_skybox_public: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  blank_skybox_public: {fileID: 2100000, guid: dd6066ff45c9de544b0de11e715c8652, type: 2}

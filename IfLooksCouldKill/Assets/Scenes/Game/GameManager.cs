@@ -12,12 +12,17 @@ public class GameManager : MonoBehaviour {
     float closed_frames;
 
     public static GameObject prompt;
+    public Material default_skybox_public;
+    public Material blank_skybox_public;
+    public static Material default_skybox;
+    public static Material blank_skybox;
 
     void Start() {
         blind = true;
         closed_frames = 0;
+        default_skybox = default_skybox_public;
+        blank_skybox = blank_skybox_public;
         set_state(blind);
-
     }
 
     void FixedUpdate() {
@@ -42,10 +47,12 @@ public class GameManager : MonoBehaviour {
     public static void set_state(bool blind) {
         if (blind) {
             Shader.SetGlobalInt("_Blind", 1);
+            RenderSettings.skybox = blank_skybox;
             RenderSettings.reflectionIntensity = 0.0f;
         }
         else {
             Shader.SetGlobalInt("_Blind", 0);
+            RenderSettings.skybox = default_skybox;
             RenderSettings.reflectionIntensity = 1.0f;
         }
         GameObject[] lights = GameObject.FindGameObjectsWithTag("Light");
