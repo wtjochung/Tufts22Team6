@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class VisObject : MonoBehaviour {
 
 	public GameObject hitEffect;
+	public AudioSource audio_source;
+	public Light vis_light;
 	public bool destroyWhenHit = true;
 	public float timeToDestroy = 3f;
 
@@ -18,11 +20,21 @@ public class VisObject : MonoBehaviour {
 	public void Start() {
 		altColor = this.GetComponent<Renderer>().material.color;
 		colorChangeStep = (255 - altColor.r) / timeToDestroy;
-
 	}
 
 	void Update() {
-		
+		if (audio_source != null && vis_light != null) {
+			update_sound_light();
+		}
+	}
+
+	public void update_sound_light() {
+		if (audio_source.isPlaying) {
+			vis_light.GetComponent<Light>().enabled = true;
+		}
+		else {
+			vis_light.GetComponent<Light>().enabled = false;
+		}
 	}
 
 	public virtual void laser_start_hit_event() {
