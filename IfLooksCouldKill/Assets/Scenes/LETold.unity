@@ -1806,11 +1806,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3935310048913142104, guid: fc220e15abcb1a849949632ad66e9827, type: 3}
   m_PrefabInstance: {fileID: 3935310050095260814}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1551450412 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8701840922639039464, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
-  m_PrefabInstance: {fileID: 8701840921091783364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1595746051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 558866388244654569, guid: 3c769cf840d3c204f8ab7785d3d3fc02, type: 3}
@@ -2924,10 +2919,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1955488570478154314, guid: 1b837f3f621d9f54e9c1869edfb6e847, type: 3}
-      propertyPath: pauseMenuUI
-      value: 
-      objectReference: {fileID: 1551450412}
     - target: {fileID: 1955488570478154315, guid: 1b837f3f621d9f54e9c1869edfb6e847, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -3556,6 +3547,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5111247279243654793, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701840920582716809, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8701840920606952240, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}

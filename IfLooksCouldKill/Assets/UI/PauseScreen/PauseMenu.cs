@@ -18,12 +18,12 @@ public class PauseMenu : MonoBehaviour
 
     public static bool GameisPaused = false;
     public GameObject pauseMenuUI;
-    public GameObject settingsMenuUI;
+    private GameObject settingsMenuUI;
     private bool settings;
     public string sceneName;
     string currentSceneName;
-    public GameObject player;
-   
+    private GameObject player;
+ 
 
     void Start()
     {
