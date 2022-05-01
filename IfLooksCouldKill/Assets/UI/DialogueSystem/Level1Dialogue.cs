@@ -49,28 +49,24 @@ public class Level1Dialogue : MonoBehaviour
         }
         else if (primeInt == 2)
         {
-            Char1speech.text = "Oh, thank god. You¡¯re alive. Listen, we don¡¯t have much time.";
+            Char1speech.text = "Thank god you¡¯re alive. We don¡¯t have much time.";
         }
         else if (primeInt == 3)
         {
-            Char1speech.text = "I mean this in the kindest possible way: Could you please melt the control panel and get us the bloody flipping heck out of here?";
+            Char1speech.text = "Could you incinerate that wood?";
         }
         else if (primeInt == 4)
         {
-            Char1speech.text = "The panel? Right next to you?";
+            Char1speech.text = "Oh. They blocked your vision.";
         }
         else if (primeInt == 5)
-        {
-            Char1speech.text = "Oh. They put on your goggles again. Alright, we¡¯re gonna have to take this one step at a time.";
-        }
-        else if (primeInt == 6)
         {
             Char1speech.color = new Color32(0, 0, 0, 255);
             Char1speech.text = "There should be a switch on the side of your googles. Can you feel it?";
             prompt.text = "Click to disable goggles";
             GameManager.toggleAllowed = true;
         }
-        else if (primeInt > 6 && primeInt < 100 && GameManager.blind == false)
+        else if (primeInt > 5 && primeInt < 100 && GameManager.blind == false)
         {
             playerOpensEye = true;
 
@@ -80,7 +76,7 @@ public class Level1Dialogue : MonoBehaviour
             prompt.text = "[E] to continue";
 
             Char1speech.color = new Color32(0, 0, 0, 255);
-            Char1speech.text = "Bloody genial! Be careful where you point that laser.";
+            Char1speech.text = "Be careful with that laser, you could kill someone if you aren¡¯t careful.";
 
             primeInt = 100;
 
@@ -88,12 +84,12 @@ public class Level1Dialogue : MonoBehaviour
         else if (primeInt > 100 && playerOpensEye && !doorOpened)
         {
             Char1speech.color = new Color32(0, 0, 0, 255);
-            Char1speech.text = "You could kill someone if you aren¡¯t careful. Let¡¯s kill the door.";
+            Char1speech.text = "Kill that wood while you¡¯re at it.";
            
 
         } else if (primeInt > 100 && doorOpened && !finalLine) {
             Char1speech.color = new Color32(0, 0, 0, 255);
-            Char1speech.text = "Beautiful. Let¡¯s break you out of this piehole--";
+            Char1speech.text = "Beautiful. Let¡¯s get you out of here.";
             finalLine = true;
         }
         else if (primeInt > 100 && doorOpened && finalLine && !end)
