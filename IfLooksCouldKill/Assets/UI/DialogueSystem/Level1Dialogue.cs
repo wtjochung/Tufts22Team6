@@ -49,24 +49,19 @@ public class Level1Dialogue : MonoBehaviour
         }
         else if (primeInt == 2)
         {
-            Char1speech.text = "Thank god you¡¯re alive. We don¡¯t have much time.";
+            Char1speech.text = "Thank god you¡¯re alive. We don¡¯t have much time. Could you incinerate that wood?";
         }
         else if (primeInt == 3)
         {
-            Char1speech.text = "Could you incinerate that wood?";
+            Char1speech.text = "Oh. They blocked your vision.";
         }
         else if (primeInt == 4)
         {
-            Char1speech.text = "Oh. They blocked your vision.";
-        }
-        else if (primeInt == 5)
-        {
-            Char1speech.color = new Color32(0, 0, 0, 255);
             Char1speech.text = "There should be a switch on the side of your googles. Can you feel it?";
             prompt.text = "Click to disable goggles";
             GameManager.toggleAllowed = true;
         }
-        else if (primeInt > 5 && primeInt < 100 && GameManager.blind == false)
+        else if (primeInt > 4 && primeInt < 100 && GameManager.blind == false)
         {
             playerOpensEye = true;
 
