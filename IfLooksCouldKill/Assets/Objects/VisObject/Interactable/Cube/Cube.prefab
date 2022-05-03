@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ff32fd3fe0077ed44aa092cfa1a091ca, type: 2}
+  - {fileID: 2100000, guid: 0c4edf76c3dbd9d48ad6a5a494db741a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -256,5 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
+  audio_source: {fileID: 0}
+  vis_light: {fileID: 0}
   destroyWhenHit: 1
   timeToDestroy: 1
