@@ -590,7 +590,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 350}
+  m_SizeDelta: {x: 200, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &803384950
 MonoBehaviour:
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a36967b006c1ac142b968894ab31e5b0, type: 3}
+  m_Sprite: {fileID: 4304446102398311253, guid: a36967b006c1ac142b968894ab31e5b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1186,7 +1186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -246, y: -37.000008}
+  m_AnchoredPosition: {x: -295, y: -37.000008}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362214847
@@ -1214,6 +1214,9 @@ MonoBehaviour:
     3D Artist & Level Designer
 
     Narrative Designer
+
+    Voice
+    Actor
 
 '
   m_isRightToLeft: 0
@@ -1604,6 +1607,7 @@ MonoBehaviour:
 
     SFX Artist
 
+    Website Designer
 
 '
   m_isRightToLeft: 0

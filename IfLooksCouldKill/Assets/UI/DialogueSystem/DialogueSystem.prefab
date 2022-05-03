@@ -56,6 +56,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5a1faa9bdd1a64f53a68917a7e9136a6, type: 3}
   - {fileID: 8300000, guid: 7fcb44f6c124448dfbfe56e8fb073532, type: 3}
   - {fileID: 8300000, guid: 3eda699fc817842ef8e85da2d95402c0, type: 3}
+  - {fileID: 8300000, guid: 6e1ce4e71fe2046c59a98837f03b440b, type: 3}
+  - {fileID: 8300000, guid: 2976c8db8af5d415c81346eef9393731, type: 3}
+  - {fileID: 8300000, guid: 6d7022c83ea334b2a928d99bc0b9d59e, type: 3}
+  - {fileID: 8300000, guid: c7f08eb47cd544cad8f679bd42f6615d, type: 3}
+  - {fileID: 8300000, guid: 1a3d6167233c04f35b3fa8950f52f960, type: 3}
   allowKey: 0
   blackScreen: {fileID: 0}
   canvas: {fileID: 0}

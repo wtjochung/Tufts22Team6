@@ -2164,30 +2164,6 @@ PrefabInstance:
       propertyPath: blackScreen
       value: 
       objectReference: {fileID: 3303283242017914461}
-    - target: {fileID: 6784497710668095391, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
-      propertyPath: voClips.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784497710668095391, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
-      propertyPath: voClips.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 6e1ce4e71fe2046c59a98837f03b440b, type: 3}
-    - target: {fileID: 6784497710668095391, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
-      propertyPath: voClips.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2976c8db8af5d415c81346eef9393731, type: 3}
-    - target: {fileID: 6784497710668095391, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
-      propertyPath: voClips.Array.data[8]
-      value: 
-      objectReference: {fileID: 8300000, guid: 6d7022c83ea334b2a928d99bc0b9d59e, type: 3}
-    - target: {fileID: 6784497710668095391, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
-      propertyPath: voClips.Array.data[9]
-      value: 
-      objectReference: {fileID: 8300000, guid: c7f08eb47cd544cad8f679bd42f6615d, type: 3}
-    - target: {fileID: 6784497710668095391, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
-      propertyPath: voClips.Array.data[10]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1a3d6167233c04f35b3fa8950f52f960, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
 --- !u!1 &1353160835
