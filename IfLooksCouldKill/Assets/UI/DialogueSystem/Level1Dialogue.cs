@@ -26,6 +26,8 @@ public class Level1Dialogue : MonoBehaviour
     private bool finalLine = false;
     private bool end = false;
     private int clipToPlay = 0;
+    private bool passedBlocks = false;//todo set trigger
+    private bool passedSolar = false;//todo set false, set trigger
 
     //TODO: autoplay, integration of more voice clips
     
@@ -42,7 +44,6 @@ public class Level1Dialogue : MonoBehaviour
         prompt.text = "[E] to continue";
 
         allowKey = true;
-      //  canvas.GetComponent<EKeyInteraction>().allowKeyPress(allowKey, "[E] to continue");
        
     }
 
@@ -50,77 +51,138 @@ public class Level1Dialogue : MonoBehaviour
     {         // main story function. Players hit next to progress to next int
         primeInt = primeInt + 1;
 
-        if (primeInt == 1)
+        if (!passedBlocks && !passedSolar)
         {
-            blackScreen.color = new Color32(0, 0, 0, 0);
+            if (primeInt == 1)
+            {
+                blackScreen.color = new Color32(0, 0, 0, 0);
+            }
+            else if (primeInt == 2)
+            {
+                clipToPlay = 0;
+                playAudioClip(clipToPlay);
+
+                Char1speech.text = "Thank god you're alive. We don't have much time. Could you incinerate that wood?";
+            }
+            else if (primeInt == 3)
+            {
+                clipToPlay = 1;
+                playAudioClip(clipToPlay);
+
+                Char1speech.text = "Oh. They blocked your vision.";
+            }
+            else if (primeInt == 4)
+            {
+                clipToPlay = 2;
+                playAudioClip(clipToPlay);
+
+                Char1speech.text = "There should be a switch on the side of your googles. Can you feel it?";
+                prompt.text = "Click to disable goggles";
+                GameManager.toggleAllowed = true;
+            }
+            else if (primeInt > 4 && primeInt < 100 && GameManager.blind == false && !woodDestroyed)
+            {
+                clipToPlay = 3;
+                playAudioClip(clipToPlay);
+
+                playerOpensEye = true;
+
+                allowKey = true;
+
+                prompt.text = "[E] to continue";
+
+                Char1speech.color = new Color32(0, 0, 0, 255);
+                Char1speech.text = "Be careful with that laser, you could kill someone if you aren't careful. Kill that wood while you¡¯re at it.";
+
+                primeInt = 100;
+
+            }
+            else if (primeInt > 100 && primeInt < 200 && playerOpensEye && woodDestroyed)
+            {
+                clipToPlay = 4;
+                playAudioClip(clipToPlay);
+
+                Char1speech.color = new Color32(0, 0, 0, 255);
+                Char1speech.text = "Beautiful. Let's get you out of here.";
+                primeInt = 200;
+
+            }
+            else if (primeInt > 200 && !finalLine)
+            {
+
+                clipToPlay = 5;
+                playAudioClip(clipToPlay);
+                clipToPlay = 10;
+
+                Char1speech.color = new Color32(0, 0, 0, 255);
+                Char1speech.text = "See those blocks? They're made of pure aluminum-grade iron. Not to worry, your eyes should melt right through them.";
+                finalLine = true;
+            }
+            else if (primeInt > 200 && finalLine && !end)
+            {
+
+                hideBox();
+                end = true;
+                
+            }
+        } else if (passedBlocks && !passedSolar)
+        {
+            Debug.Log("Dialogue: passed blocks");
+            if (primeInt == 1)
+            {
+                Debug.Log("solar 1");
+                clipToPlay = 6;
+                playAudioClip(clipToPlay);
+
+                Char1speech.text = "That solar panel needs 12 volts of energy. Your eyes produce quite a lot more. Charge it up. Hopefully it won't explode.";
+            }
+            else if (primeInt == 2)
+            {
+                Debug.Log("solar 2");
+                clipToPlay = 7;
+                playAudioClip(clipToPlay);
+
+                Char1speech.text = "Don't explode don't explode......";
+            }
+            else if (primeInt > 2 && primeInt < 100 )
+            {
+                Debug.Log("solar 3");
+                clipToPlay = 8;
+                playAudioClip(clipToPlay);
+
+                Char1speech.text = "Okay, we're clear. Let's get a move on.";
+
+                primeInt = 100;
+                finalLine = true;
+            }
+            else if (primeInt > 100 && finalLine && !end)
+            {
+                hideBox();
+                end = true;
+            }
+        } else if (passedSolar)
+        {
+            if (primeInt == 1)
+            {
+                
+                clipToPlay = 9;
+                playAudioClip(clipToPlay);
+
+                Char1speech.text = "That thing's called a mirror. It reflects photons by inverting their angle of incidenc - oh, you already know how mirrors work? I'll leave you to it.";
+            }
+            else if (primeInt == 2)
+            {
+             
+                clipToPlay = 10;
+                playAudioClip(clipToPlay);
+
+                Char1speech.text = "Amazing. Just a few more rooms and you should - *static*";
+                primeInt = 300;
+            } else if (primeInt == 300)
+            {
+                hideBox();
+            }
         }
-        else if (primeInt == 2)
-        {
-            clipToPlay = 0;
-            playAudioClip(clipToPlay);
-          
-            Char1speech.text = "Thank god you¡¯re alive. We don¡¯t have much time. Could you incinerate that wood?";
-        }
-        else if (primeInt == 3)
-        {
-            clipToPlay = 1;
-            playAudioClip(clipToPlay);
-
-            Char1speech.text = "Oh. They blocked your vision.";
-        }
-        else if (primeInt == 4)
-        {
-            clipToPlay = 2;
-            playAudioClip(clipToPlay);
-
-            Char1speech.text = "There should be a switch on the side of your googles. Can you feel it?";
-            prompt.text = "Click to disable goggles";
-            GameManager.toggleAllowed = true;
-        }
-        else if (primeInt > 4 && primeInt < 100 && GameManager.blind == false && !woodDestroyed)
-        {
-            clipToPlay = 3;
-            playAudioClip(clipToPlay);
-
-            playerOpensEye = true;
-
-            allowKey = true;
-
-            prompt.text = "[E] to continue";
-
-            Char1speech.color = new Color32(0, 0, 0, 255);
-            Char1speech.text = "Be careful with that laser, you could kill someone if you aren¡¯t careful. Kill that wood while you¡¯re at it.";
-
-            primeInt = 100;
-
-        }
-        else if (primeInt > 100 && primeInt < 200 && playerOpensEye && woodDestroyed)
-        {
-            clipToPlay = 4;
-            playAudioClip(clipToPlay);
-
-            Char1speech.color = new Color32(0, 0, 0, 255);
-            Char1speech.text = "Beautiful. Let¡¯s get you out of here.";
-            primeInt = 200;
-
-        } else if (primeInt > 200 && !finalLine) {
-           
-            clipToPlay = 5;
-            playAudioClip(clipToPlay);
-            clipToPlay = 10;
-
-            Char1speech.color = new Color32(0, 0, 0, 255);
-            Char1speech.text = "See those blocks? They¡¯re made of pure aluminum-grade iron. Not to worry, your eyes should melt right through them.";
-            finalLine = true;
-        }
-        else if (primeInt > 200 && finalLine && !end)
-        {
-            
-            DialogueBox.SetActive(false);
-            Char1speech.text = "";
-            prompt.text = "";
-            end = true;
-        } 
     }
 
         void Update()
@@ -139,9 +201,25 @@ public class Level1Dialogue : MonoBehaviour
         woodDestroyed = true;
     }
 
+    public void playerPassedBlocks()
+    {
+        if (!passedBlocks) primeInt = 1;
+        passedBlocks = true;
+        finalLine = false;
+        end = false;
+    }
+
+    public void playerPassedSolar()
+    {
+        if (!passedSolar) primeInt = 1;
+        passedSolar = true;
+        finalLine = false;
+        end = false;
+    }
+
     public void endDialogue()
     {
-        primeInt = 200;
+        primeInt = 500;
         playerOpensEye = true;
         woodDestroyed = true;
         finalLine = true;
@@ -149,6 +227,13 @@ public class Level1Dialogue : MonoBehaviour
 
         DialogueBox.SetActive(false);
         Char1speech.text = "";
+    }
+
+    private void hideBox()
+    {
+        DialogueBox.SetActive(false);
+        Char1speech.text = "";
+        prompt.text = "";
     }
 
     public void playAudioClip(int clipNum)
