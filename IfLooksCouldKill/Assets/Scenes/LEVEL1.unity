@@ -2279,8 +2279,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.4072187
-  m_Center: {x: 2.098597, y: 0, z: 1.5854704}
+  m_Radius: 4.1810813
+  m_Center: {x: 2.098597, y: 0, z: 2.2865052}
 --- !u!1001 &1087782915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3432,14 +3432,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.91886795, g: 1, b: 0.9976387, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5362,7 +5362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4074426927930064579, guid: 40381a197481e28418666d697f3a6eac, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4074426927930064583, guid: 40381a197481e28418666d697f3a6eac, type: 3}
       propertyPath: m_Materials.Array.data[0]

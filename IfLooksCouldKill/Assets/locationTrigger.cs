@@ -15,7 +15,7 @@ public class locationTrigger : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player")) FindObjectOfType<Level1Dialogue>().playerDestroyedWood();
         Debug.Log("Player entered wood trigger");
