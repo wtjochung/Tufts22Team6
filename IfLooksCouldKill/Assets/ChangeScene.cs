@@ -33,7 +33,6 @@ public class ChangeScene: MonoBehaviour
 
     private IEnumerator changeOpacity()
     {
-        
 
         float tick = 0f;
         while (a.color != endColor)

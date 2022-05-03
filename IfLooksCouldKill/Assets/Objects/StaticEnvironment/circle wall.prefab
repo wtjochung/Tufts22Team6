@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4536366070435949081}
   - component: {fileID: 4112000195141882048}
   - component: {fileID: 4497494558866965070}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: circle wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

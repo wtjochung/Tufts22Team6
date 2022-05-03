@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Level1Dialogue1 : MonoBehaviour
 {
@@ -24,6 +26,7 @@ public class Level1Dialogue1 : MonoBehaviour
 
     private bool playerKillsNPC = false;
     private bool playerLeft = false;
+    private bool nearElevator = false;
 
 
     // Start is called before the first frame update
@@ -98,19 +101,22 @@ public class Level1Dialogue1 : MonoBehaviour
             clipToPlay = 4;
             playAudioClip(clipToPlay);
 
-            // Char1speech.color = new Color32(0, 0, 0, 255);
+            Char1speech.color = new Color32(50, 0, 0, 255);
             DialogueBox.SetActive(true);
             Char1speech.text = "I understand *cough*...good luck.";
+
             primeInt = 200;
         }
-        else if (primeInt > 200)
-        {
+        else if (primeInt >= 200 && nearElevator)
+        {/*
             clipToPlay = 5;
             playAudioClip(clipToPlay);
             Char1speech.color = new Color32(0, 0, 0, 255);
             DialogueBox.SetActive(true);
-            Char1speech.text = "Whew, connection¡¯s back. Looks like you¡¯re near the elevator. Take it up and you¡¯ll be one step closer to breaking out.";
-        } else if (primeInt > 9)
+            Char1speech.text = "Whew, connection's back. Looks like you're near the elevator. Take it up and you'll be one step closer to breaking out.";
+        */
+        }
+        else if (primeInt > 201)
         {
             DialogueBox.SetActive(false);
             Char1speech.text = "";
@@ -143,7 +149,9 @@ public class Level1Dialogue1 : MonoBehaviour
         {
             vo.Stop();
         }
-        if (clipNum < voClips.Length) vo.PlayOneShot(voClips[clipNum]);
+        if (clipNum <= voClips.Length - 1) vo.PlayOneShot(voClips[clipNum]);
+        Debug.Log("clipNum " + clipNum);
+        Debug.Log("length " + voClips.Length);
     }
 
     public void NPCSpared()
@@ -154,5 +162,25 @@ public class Level1Dialogue1 : MonoBehaviour
     public void NPCKilled()
     {
         playerKillsNPC = true;
+    }
+
+    public void level1Elevator()
+    {
+        Debug.Log("level1elevator called");
+        nearElevator = true;
+        clipToPlay = 5;
+        playAudioClip(clipToPlay);
+        Char1speech.color = new Color32(0, 0, 0, 255);
+        DialogueBox.SetActive(true);
+        Char1speech.text = "Whew, connection's back. Looks like you're near the elevator. Take it up and you'll be one step closer to breaking out.";
+
+        StartCoroutine(Wait(voClips[5].length + 1f));
+
+    }
+
+    IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene("GameEnd");
     }
 }
