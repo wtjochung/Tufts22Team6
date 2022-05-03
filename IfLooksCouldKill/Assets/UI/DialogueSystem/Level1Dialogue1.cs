@@ -17,6 +17,13 @@ public class Level1Dialogue1 : MonoBehaviour
     private int primeInt;
 
 
+    public AudioSource vo;
+    public AudioClip[] voClips;
+
+    private int clipToPlay = 0;
+
+    private bool playerKillsNPC = false;
+    private bool playerLeft = false;
 
 
     // Start is called before the first frame update
@@ -48,43 +55,61 @@ public class Level1Dialogue1 : MonoBehaviour
             DialogueManager.GetComponent<Level1Dialogue>().endDialogue();
             DialogueBox.SetActive(true);
             Char1speech.color = new Color32(50, 0, 0, 200);
+
+            clipToPlay = 0;
+            playAudioClip(clipToPlay);
+
             Char1speech.text = "Hello? Is someone...there?";
             Debug.Log("prime int " + primeInt + "dialogue");
         }
         else if (primeInt == 2)
         {
             DialogueBox.SetActive(true);
+
+            clipToPlay = 1;
+            playAudioClip(clipToPlay);
+
             Char1speech.text = "Oh my god. You survived. (cough) But why?";
         }
         else if (primeInt == 3)
         {
-            Char1speech.color = new Color32(0, 0, 0, 255);
+            //Char1speech.color = new Color32(0, 0, 0, 255);
             DialogueBox.SetActive(true);
-            Char1speech.text = "Hello? Can you hear¡ª";
+
+            clipToPlay = 2;
+            playAudioClip(clipToPlay);
+            Char1speech.text = "Listen, I'm not gonna make it. I don't want to ask this. But could you please...end it? With your eyes, I mean. End me?";
+            primeInt = 100;
         }
-        else if (primeInt == 4)
+        else if (primeInt > 100 && playerKillsNPC && !playerLeft)
         {
+            clipToPlay = 3;
+            playAudioClip(clipToPlay);
+
             Char1speech.color = new Color32(50, 0, 0, 200);
             DialogueBox.SetActive(true);
-            Char1speech.text = "Is that...Artie? Oh no. (cough) ";
+            Char1speech.text = "AHHHHHH...thank you...";
+
+            primeInt = 200;
+
         }
-        else if (primeInt == 5)
+        else if (primeInt > 100 && playerLeft && !playerKillsNPC)
         {
-           // Char1speech.color = new Color32(0, 0, 0, 255);
+            clipToPlay = 4;
+            playAudioClip(clipToPlay);
+
+            // Char1speech.color = new Color32(0, 0, 0, 255);
             DialogueBox.SetActive(true);
-            Char1speech.text = "What I mean is...keep your wits about you, friend. Uncle Artie doesn¡¯t usually take this kindly to people like you.";
+            Char1speech.text = "I understand *cough*...good luck.";
+            primeInt = 200;
         }
-        else if (primeInt == 6)
+        else if (primeInt > 200)
         {
-           // Char1speech.color = new Color32(0, 0, 0, 255);
+            clipToPlay = 5;
+            playAudioClip(clipToPlay);
+            Char1speech.color = new Color32(0, 0, 0, 255);
             DialogueBox.SetActive(true);
-            Char1speech.text = "Listen, I¡¯m not gonna make it. I don¡¯t want to ask this. But could you please¡­end it?";
-        }
-        else if (primeInt == 7)
-        {
-           // Char1speech.color = new Color32(0, 0, 0, 255);
-            DialogueBox.SetActive(true);
-            Char1speech.text = "With your eyes, I mean. End me?";
+            Char1speech.text = "Whew, connection¡¯s back. Looks like you¡¯re near the elevator. Take it up and you¡¯ll be one step closer to breaking out.";
         } else if (primeInt > 9)
         {
             DialogueBox.SetActive(false);
@@ -101,6 +126,33 @@ public class Level1Dialogue1 : MonoBehaviour
 
     public void endNPCDialogue()
     {
-        primeInt = 10;
+        primeInt = 100;
+        hideBox();
+    }
+
+    private void hideBox()
+    {
+        DialogueBox.SetActive(false);
+        Char1speech.text = "";
+        prompt.text = "";
+    }
+
+    public void playAudioClip(int clipNum)
+    {
+        if (vo.isPlaying)
+        {
+            vo.Stop();
+        }
+        if (clipNum < voClips.Length) vo.PlayOneShot(voClips[clipNum]);
+    }
+
+    public void NPCSpared()
+    {
+        playerLeft = true;
+    }
+
+    public void NPCKilled()
+    {
+        playerKillsNPC = true;
     }
 }

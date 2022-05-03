@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class NPC : VisObject {
     public GameObject DialogueBox;
     public Text speech;
-
     public Text prompt;
+
+
 
     new void Start() {
         base.Start();

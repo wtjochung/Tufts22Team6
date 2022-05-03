@@ -99,9 +99,11 @@ public class Level1Dialogue : MonoBehaviour
             }
             else if (primeInt > 100 && primeInt < 200 && playerOpensEye && woodDestroyed)
             {
+
                 clipToPlay = 4;
                 playAudioClip(clipToPlay);
 
+                DialogueBox.SetActive(true);
                 Char1speech.color = new Color32(0, 0, 0, 255);
                 Char1speech.text = "Beautiful. Let's get you out of here.";
                 primeInt = 200;
@@ -114,6 +116,7 @@ public class Level1Dialogue : MonoBehaviour
                 playAudioClip(clipToPlay);
                 clipToPlay = 10;
 
+                DialogueBox.SetActive(true);
                 Char1speech.color = new Color32(0, 0, 0, 255);
                 Char1speech.text = "See those blocks? They're made of pure aluminum-grade iron. Not to worry, your eyes should melt right through them.";
                 finalLine = true;
@@ -127,9 +130,11 @@ public class Level1Dialogue : MonoBehaviour
             }
         } else if (passedBlocks && !passedSolar)
         {
+            DialogueBox.SetActive(true);
             Debug.Log("Dialogue: passed blocks");
             if (primeInt == 1)
             {
+                DialogueBox.SetActive(true);
                 Debug.Log("solar 1");
                 clipToPlay = 6;
                 playAudioClip(clipToPlay);
@@ -138,6 +143,7 @@ public class Level1Dialogue : MonoBehaviour
             }
             else if (primeInt == 2)
             {
+                DialogueBox.SetActive(true);
                 Debug.Log("solar 2");
                 clipToPlay = 7;
                 playAudioClip(clipToPlay);
@@ -162,9 +168,10 @@ public class Level1Dialogue : MonoBehaviour
             }
         } else if (passedSolar)
         {
+            
             if (primeInt == 1)
             {
-                
+                DialogueBox.SetActive(true);
                 clipToPlay = 9;
                 playAudioClip(clipToPlay);
 
@@ -178,9 +185,10 @@ public class Level1Dialogue : MonoBehaviour
 
                 Char1speech.text = "Amazing. Just a few more rooms and you should - *static*";
                 primeInt = 300;
-            } else if (primeInt == 300)
+            } else if (primeInt >= 300 && !end)
             {
                 hideBox();
+                end = true;
             }
         }
     }
@@ -199,11 +207,13 @@ public class Level1Dialogue : MonoBehaviour
     public void playerDestroyedWood()
     {
         woodDestroyed = true;
+        finalLine = false;
+        end = false;
     }
 
     public void playerPassedBlocks()
     {
-        if (!passedBlocks) primeInt = 1;
+        if (!passedBlocks) primeInt = 0;
         passedBlocks = true;
         finalLine = false;
         end = false;
@@ -211,7 +221,7 @@ public class Level1Dialogue : MonoBehaviour
 
     public void playerPassedSolar()
     {
-        if (!passedSolar) primeInt = 1;
+        if (!passedSolar) primeInt = 0;
         passedSolar = true;
         finalLine = false;
         end = false;
@@ -225,8 +235,7 @@ public class Level1Dialogue : MonoBehaviour
         finalLine = true;
         end = true;
 
-        DialogueBox.SetActive(false);
-        Char1speech.text = "";
+        hideBox();
     }
 
     private void hideBox()
