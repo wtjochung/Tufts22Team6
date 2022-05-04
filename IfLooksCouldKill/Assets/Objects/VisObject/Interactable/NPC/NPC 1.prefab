@@ -216,6 +216,8 @@ MonoBehaviour:
   Char1speech: {fileID: 0}
   DialogueManager: {fileID: 0}
   prompt: {fileID: 0}
+  vo: {fileID: 0}
+  voClips: []
 --- !u!1 &8319199122575527262
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +231,6 @@ GameObject:
   - component: {fileID: 8319199122575527256}
   - component: {fileID: 8319199122575527263}
   - component: {fileID: 5039171902659684817}
-  - component: {fileID: 5039171902659684822}
   - component: {fileID: 8118394603588293565}
   - component: {fileID: -6505490189535200754}
   m_Layer: 3
@@ -337,21 +338,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!114 &5039171902659684822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8319199122575527262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2042cf774a2cf4747aef34231835e897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
-  destroyWhenHit: 1
-  timeToDestroy: 5
 --- !u!114 &8118394603588293565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,8 +351,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 8720825104725305906, guid: 65893903934ebdf4f9b818f0fbaf9e84, type: 3}
+  audio_source: {fileID: 0}
+  vis_light: {fileID: 0}
   destroyWhenHit: 1
-  timeToDestroy: 3
+  timeToDestroy: 5
   DialogueBox: {fileID: 0}
   speech: {fileID: 0}
   prompt: {fileID: 0}

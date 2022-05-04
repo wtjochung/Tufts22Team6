@@ -12,8 +12,7 @@ public class DetectObjectsInLOS : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void FixedUpdate() {
         GameObject go = Instantiate(LinePrefab, Vector3.zero, Quaternion.identity);
     }
 }

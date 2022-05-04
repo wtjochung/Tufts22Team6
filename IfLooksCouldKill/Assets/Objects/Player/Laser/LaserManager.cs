@@ -45,11 +45,11 @@ public class LaserManager : MonoBehaviour {
 		fireHitPosition = this.transform.position;
 	}
 
-	void Update() {
+	void FixedUpdate() { //Changing this to FixedUpdate lets weaker computers catch a break
 		int linesCount = 0;
 		if (!GameManager.blind) {
-			foreach (LaserBeam laser in lasers) {
-				linesCount += CalcLaserLine(laser.transform.position + laser.transform.forward * 0.6f, laser.transform.forward, linesCount);
+			for (int i = 0; i < lasers.Count; i++) { //faster, doesn't need to allocate duplicate vars
+				linesCount += CalcLaserLine(lasers[i].transform.position + lasers[i].transform.forward * 0.6f, lasers[i].transform.forward, linesCount);
 			}
 		}
 		RemoveOldLines(linesCount);
@@ -59,14 +59,13 @@ public class LaserManager : MonoBehaviour {
 
 	
 
-	Vector3 getFireHitPosition()
-    {
+	Vector3 getFireHitPosition() {
 		return fireHitPosition;
     }
 
 	int CalcLaserLine(Vector3 startPosition, Vector3 direction, int index) {
 		RaycastHit hit;
-		Ray ray = new Ray(startPosition, direction);
+		Ray ray = new Ray(startPosition, direction); //I'm really surprised there isn't a better way to do this
 		bool intersect = Physics.Raycast(ray, out hit, maxStepDistance);		
 
 		if (!intersect) { 
@@ -110,7 +109,8 @@ public class LaserManager : MonoBehaviour {
 			line = lines[index].GetComponent<LineRenderer>();
 		} 
 		else {
-			GameObject go = Instantiate(LinePrefab, Vector3.zero, Quaternion.identity);
+			GameObject go = Instantiate(LinePrefab, Vector3.zero, Quaternion.identity); //Feel like there might be a better way to
+			//do this
 			line = go.GetComponent<LineRenderer>();
 			lines.Add(go);
 		}
