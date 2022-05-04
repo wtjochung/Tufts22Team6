@@ -23,6 +23,7 @@ public class ToGameEnd : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
             changeScene();
         }
     }
