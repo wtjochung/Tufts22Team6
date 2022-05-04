@@ -51,7 +51,9 @@ public class VisObject : MonoBehaviour {
 
 	public void HitByLaser() {
 		if (!called_start_hit) {
-			Instantiate(hitEffect);
+			//Instantiate(hitEffect);
+			GameObject particleSys = Instantiate(hitEffect);
+			StartCoroutine(destroyParticles(particleSys));
 			laser_start_hit_event();
 			called_start_hit = true;
 		}
@@ -71,6 +73,12 @@ public class VisObject : MonoBehaviour {
 				this.gameObject.SetActive(false);
 			}
 		}
+	}
+
+	IEnumerator destroyParticles(GameObject pSys)
+	{
+		yield return new WaitForSeconds(5f);
+		Destroy(pSys);
 	}
 
 	private void changeColor() {
