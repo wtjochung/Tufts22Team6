@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: fb387703d97025e4ea149a32894a2d67, type: 2}
-  render_texture: {fileID: 0}
+  render_texture: {fileID: 8400000, guid: 7703594c8a26b0c4f86968081f7704fb, type: 2}
 --- !u!20 &9097988101925980565
 Camera:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 7703594c8a26b0c4f86968081f7704fb, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
