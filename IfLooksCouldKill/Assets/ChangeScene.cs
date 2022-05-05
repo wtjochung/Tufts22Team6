@@ -28,7 +28,7 @@ public class ChangeScene: MonoBehaviour
     public void changeScene(string sceneName)
     {
         Time.timeScale = 1f;
-        if (sceneName != "") SceneManager.LoadSceneAsync(sceneName);
+        if (sceneName != "") SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
     }
 
     private IEnumerator changeOpacity()
@@ -43,7 +43,7 @@ public class ChangeScene: MonoBehaviour
         }
         if (a.color == endColor)
         {
-            if (sceneToLoad != "") SceneManager.LoadSceneAsync(sceneToLoad);
+            changeScene(sceneToLoad);
         }
     }
 }
