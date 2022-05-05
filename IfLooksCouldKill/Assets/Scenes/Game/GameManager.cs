@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
     public static Material default_skybox;
     public static Material blank_skybox;
 
-    void Start() {
+    void Awake() {
         blind = true;
         closed_frames = 0;
         default_skybox = default_skybox_public;
