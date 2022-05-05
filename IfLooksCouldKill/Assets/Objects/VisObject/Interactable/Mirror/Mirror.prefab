@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 6513445965446516929}
   - component: {fileID: 6513445965446516942}
   - component: {fileID: 6513445965446516943}
-  - component: {fileID: 5405401044238353790}
-  - component: {fileID: 9097988101925980565}
   m_Layer: 0
   m_Name: Mirror
   m_TagString: Mirror
@@ -31,7 +29,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.7, y: 4.7, z: 9.75}
   m_LocalScale: {x: 3, y: 3, z: 0.1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7708235709437429629}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,27 +97,59 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5405401044238353790
+--- !u!1 &6515076154620222412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7708235709437429629}
+  - component: {fileID: 938857490365786597}
+  - component: {fileID: 7176895401655828737}
+  m_Layer: 0
+  m_Name: CamReal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7708235709437429629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515076154620222412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6513445965446516928}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &938857490365786597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6513445965446516940}
+  m_GameObject: {fileID: 6515076154620222412}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27f52e60a7370104088e6917798aede8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: fb387703d97025e4ea149a32894a2d67, type: 2}
-  render_texture: {fileID: 8400000, guid: 7703594c8a26b0c4f86968081f7704fb, type: 2}
---- !u!20 &9097988101925980565
+  material: {fileID: 0}
+  render_texture: {fileID: 0}
+--- !u!20 &7176895401655828737
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6513445965446516940}
+  m_GameObject: {fileID: 6515076154620222412}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -145,7 +176,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 7703594c8a26b0c4f86968081f7704fb, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: e824149f473f2cd4188b0617c03f964e, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
