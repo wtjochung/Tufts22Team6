@@ -16,7 +16,22 @@ public class Mirror : MonoBehaviour {
     }
 
     void Update() {
-        transform.LookAt(target);
+        transform.LookAt(target); //Look at the player. This isn't actually how mirrors work, so we're not done :(
+        float x_coord = transform.localRotation.eulerAngles.x; //Calculate the x and y coords. Unity will "correct" negative numbers
+        //to be overflowing, but we actually like negative numbers and the rotation should never go above 180 anyway, so it's pretty
+        //easy to correct for that
+        if (x_coord > 180.0f) {
+            x_coord -= 360.0f;
+        }
+        float y_coord = transform.localRotation.eulerAngles.y;
+        if (y_coord > 180.0f) {
+            y_coord -= 360.0f;
+        }
+        //We don't need to do this for z because it'll always be 0
+        transform.Rotate(x_coord * -2.0f, y_coord * -2.0f, 0.0f); //Invert the y coord so it was a reflection based on the angle
+        //the player looked at it from
+        transform.SetPositionAndRotation(transform.position, Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0.0f));
+        //And then do some weird bullshit because the previous call actually did rotate z when it wasn't supposed to lol
     }
 
     void OnRenderImage(RenderTexture src, RenderTexture dest) {
