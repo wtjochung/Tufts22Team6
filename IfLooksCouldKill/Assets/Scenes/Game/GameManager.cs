@@ -17,8 +17,13 @@ public class GameManager : MonoBehaviour {
     public static Material default_skybox;
     public static Material blank_skybox;
 
+    private void Awake()
+    {
+        Debug.Log("GM Awake");
+    }
     void Start()
     {
+        Debug.Log("GM Start");
         blind = true;
         closed_frames = 0;
         default_skybox = default_skybox_public;
@@ -27,6 +32,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void FixedUpdate() {
+        Debug.Log("GM FixedUpdate");
         if (blind) {
             if (closed_frames < 120) {
                 closed_frames++;
@@ -46,6 +52,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public static void set_state(bool blind) {
+       
         if (blind) {
             Shader.SetGlobalInt("_Blind", 1);
             RenderSettings.skybox = blank_skybox;
@@ -53,21 +60,28 @@ public class GameManager : MonoBehaviour {
         }
         else {
             Shader.SetGlobalInt("_Blind", 0);
+            
             RenderSettings.skybox = default_skybox;
             RenderSettings.reflectionIntensity = 1.0f;
         }
+       
         GameObject[] lights = GameObject.FindGameObjectsWithTag("Light");
         foreach (GameObject light in lights) {
             light.GetComponent<Light>().enabled = !blind;
         }
+        
         GameObject player_light = GameObject.FindGameObjectWithTag("MainCamera");
         player_light.GetComponent<Light>().enabled = blind;
         GameObject[] laser_cylinders = GameObject.FindGameObjectsWithTag("Laser");
         foreach (GameObject laser_cylinder in laser_cylinders) {
             laser_cylinder.GetComponent<MeshRenderer>().enabled = !blind;
         }
+
+       
         GameObject pp = GameObject.FindGameObjectWithTag("Post Processor");
         pp.GetComponent<PostProcessVolume>().enabled = !blind;
+ 
+        Debug.Log("blind int: " + Shader.GetGlobalInt("_Blind"));
     }
 }
 

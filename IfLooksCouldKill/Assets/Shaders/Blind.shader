@@ -50,6 +50,7 @@ Shader "Custom/Blind" {
 				o.Alpha = 1;
 				o.Metallic = 0.5; //Back when Blind was a material rather than a Shader, these values seemed to work.
 				o.Smoothness = 0.0;
+				
 			}
 			else {
 				float4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
@@ -57,6 +58,7 @@ Shader "Custom/Blind" {
 				o.Metallic = _Metallic;
 				o.Smoothness = _Glossiness;
 				o.Alpha = c.a;
+				
 			}
 		}
 
