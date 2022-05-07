@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: db93cfb16cdc5914a8ff4a7e2b77e76c, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 59a149b94a124eb4abcf47478ae1fd3b, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2932,31 +2932,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8701840920606952240, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8701840920606952240, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8701840920606952240, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701840920889495575, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8701840920889495575, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 922040761}
+      objectReference: {fileID: 815395525}
+    - target: {fileID: 8701840920889495575, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701840920889495575, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701840920889495575, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: LEVEL2
+      objectReference: {fileID: 0}
     - target: {fileID: 8701840921616495886, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 922040761}
     - target: {fileID: 8701840922388519355, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8701840922388519355, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8701840922639039464, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_Name
@@ -2964,10 +2980,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8701840922639039464, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
+--- !u!1 &815395524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8701840920889495573, guid: 1f6ef461b09f91b4ab7264d7be91891b, type: 3}
+  m_PrefabInstance: {fileID: 815395523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &815395525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815395524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e015feeb6a730d64faa4d1273462395b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: LEVEL2
+  item: {fileID: 0}
 --- !u!1001 &839092391
 PrefabInstance:
   m_ObjectHideFlags: 0

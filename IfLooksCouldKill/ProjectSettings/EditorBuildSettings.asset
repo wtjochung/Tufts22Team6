@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PlayerControlTest.unity
     guid: 6a9ca6a736132f947bd0c26afd31dafa
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/StartMenu/StartMenu.unity
     guid: 9453e7695ffb5c14a92b69f525c0dff8
   - enabled: 0
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LEVEL1 DRAFT 2.unity
     guid: 88e87e6f946c842aa93a5a36cd5edc56
+  - enabled: 1
+    path: Assets/Scenes/LEVEL2.unity
+    guid: 742e271454619487682222007a14eee2
   - enabled: 1
     path: Assets/Scenes/EndScreen/GameEnd.unity
     guid: 9fc648835475ea144ad08d2db438dea8

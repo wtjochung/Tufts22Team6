@@ -28,7 +28,7 @@ public class ChangeScene: MonoBehaviour
     public void changeScene(string sceneName)
     {
         Time.timeScale = 1f;
-        if (sceneName != "") SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        if (sceneName != "") SceneManager.LoadScene(sceneName);
     }
 
     private IEnumerator changeOpacity()
