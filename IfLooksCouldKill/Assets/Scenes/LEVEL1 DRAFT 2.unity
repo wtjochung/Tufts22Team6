@@ -5194,6 +5194,10 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 20793941622941012, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: near clip plane
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 114386913375398758, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
       propertyPath: m_JumpSpeed
       value: 7
@@ -5206,6 +5210,30 @@ PrefabInstance:
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: 586f3707b62ca824c91ab629205a46b7, type: 2}
+    - target: {fileID: 3236809667241061478, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.16432355
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236809667241061478, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.16432355
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236809667241061478, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.16432355
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236809667241061478, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236809667241061478, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236809667241061478, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.334
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93e39505c6f8cf0459bb096efac0ff1f, type: 3}
 --- !u!1001 &1222166483
