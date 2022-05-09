@@ -174,13 +174,13 @@ public class Level1Dialogue1 : MonoBehaviour
         DialogueBox.SetActive(true);
         Char1speech.text = "Whew, connection's back. Looks like you're near the elevator. Take it up and you'll be one step closer to breaking out.";
 
-        StartCoroutine(Wait(voClips[5].length + 1f));
+     //   StartCoroutine(Wait(voClips[5].length + 1f));
 
     }
 
     IEnumerator Wait(float time)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene("GameEnd");
+       
     }
 }
