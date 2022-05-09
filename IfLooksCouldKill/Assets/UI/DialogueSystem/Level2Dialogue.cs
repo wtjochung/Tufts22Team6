@@ -23,7 +23,7 @@ public class Level2Dialogue : MonoBehaviour
     private bool finalLine = false;
     private bool end = false;
     private int clipToPlay = 0;
-    private bool outOfElevator = false;//todo set trigger
+   
     private bool passedChasm = false;//todo set false, set trigger
 
     //TODO: autoplay, integration of more voice clips
@@ -68,6 +68,10 @@ public class Level2Dialogue : MonoBehaviour
             clipToPlay = 2;
             playAudioClip(clipToPlay);
 
+            DialogueBox.SetActive(true);
+
+            prompt.text = "Press [e] to continue";
+
             Char1speech.text = "Thank god.";
             finalLine = true;
 
@@ -92,8 +96,7 @@ public class Level2Dialogue : MonoBehaviour
     public void playerPassedChasm()
     {
         passedChasm = true;
-        finalLine = true;
-        end = false;
+      
     }
 
    
