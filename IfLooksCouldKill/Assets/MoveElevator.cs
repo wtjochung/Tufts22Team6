@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MoveElevator : MonoBehaviour
 {
     public AudioSource elevatorSounds;
+    public AudioClip elevatorMove;
+
     public float openHeight = 4.5f;
     public float duration = 3f;
    
@@ -30,11 +32,17 @@ public class MoveElevator : MonoBehaviour
             Debug.Log("move elevator trigger called");
             FindObjectOfType<MoveElevatorDoor>().OperateDoor();
             elevatorSounds.Play();
+            StartCoroutine(Wait(1f));
             playerEntered = true;
         }
     }
 
+    IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+        elevatorSounds.PlayOneShot(elevatorMove);
 
-
+        yield return new WaitForSeconds(0.01f);
+    }
 
 }

@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class MoveElevatorDoor : MonoBehaviour
 {
     
-    public float openHeight = 4.5f;
-    public float duration = 3f;
+    public float openHeight = 8f;
+    public float duration = 3.5f;
     bool doorOpen;
     Vector3 closePosition;
 
@@ -25,7 +25,7 @@ public class MoveElevatorDoor : MonoBehaviour
             Vector3 openPosition = closePosition + Vector3.down * openHeight;
             StartCoroutine(MoveDoor(openPosition));
 
-            StartCoroutine(Wait(2f));
+            StartCoroutine(Wait(7f));
             
         }
         else
