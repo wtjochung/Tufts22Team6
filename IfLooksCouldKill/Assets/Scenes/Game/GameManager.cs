@@ -8,42 +8,56 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
     public static bool blind;
     public static bool toggleAllowed = false;
+    public static bool materials_set = false;
 
     float closed_frames;
 
     public static GameObject prompt;
     public Material default_skybox_public;
     public Material blank_skybox_public;
+    public Material glass_mat;
     public static Material default_skybox;
     public static Material blank_skybox;
+    public Shader bs;
+    public Shader std;
 
     public static LaserManager laser;
 
     static bool firstTimeOpened = false;
 
-    void Start()
-    {
+    void Start() {
         blind = true;
         closed_frames = 0;
         default_skybox = default_skybox_public;
         blank_skybox = blank_skybox_public;
         set_state(blind);
         laser = FindObjectOfType<LaserManager>();
+        bs = Shader.Find("Custom/Blind");
+        std = Shader.Find("Standard (Specular setup)");
     }
 
     void FixedUpdate() {
         if (blind) {
-            if (closed_frames < 120) {
+            if (closed_frames < 50) {
                 closed_frames++;
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Light>().intensity = ((closed_frames - 60f) / 60f) * 6f;
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Light>().intensity = ((closed_frames - 30f) / 20f) * 6f;
+            }
+            if (!materials_set) {
+                glass_mat.shader = bs;
+                materials_set = true;
             }
         }
         else {
+            if (!materials_set) {
+                glass_mat.shader = std;
+                materials_set = true;
+            }
             closed_frames = 0;
         }
     }
 
     public static void toggle_blind() {
+        materials_set = false;
         if (toggleAllowed) {
             blind = !blind;
             set_state(blind);

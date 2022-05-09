@@ -99,7 +99,7 @@ public class LaserManager : MonoBehaviour {
 				fireHitPosition = hit.point;
 				fire.GetComponent<moveParticleSystem>().setDestination(fireHitPosition);
 			}
-			else {
+			else if (hit.transform.gameObject.CompareTag("Mirror")) {
 				return 1 + CalcLaserLine(hit.point, Vector3.Reflect(direction, hit.normal), index + 1);
 			}
 		}

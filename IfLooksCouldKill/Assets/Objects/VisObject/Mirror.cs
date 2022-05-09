@@ -51,6 +51,6 @@ public class Mirror : MonoBehaviour {
     }
 
     void OnPostRender() {
-        transform.Translate(0.0f, offset_y * -1.0f, 0.0f);
+        transform.Translate(0.0f, offset_y * -1.0f, 0.0f); //Reset
     }
 }

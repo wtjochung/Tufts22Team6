@@ -45,3 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   default_skybox_public: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   blank_skybox_public: {fileID: 2100000, guid: dd6066ff45c9de544b0de11e715c8652, type: 2}
+  glass_mat: {fileID: 2100000, guid: 9a957a62b0cc85e4693ffb931be9fb86, type: 2}
+  bs: {fileID: 0}
+  df: {fileID: 0}
