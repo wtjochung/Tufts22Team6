@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //using UnityEngine.InputSystem;
 
 public class PlayerControl : MonoBehaviour {
@@ -37,5 +38,10 @@ public class PlayerControl : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             GameManager.toggle_blind();
         }
+    }
+
+    public void die() {
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
     }
 }
