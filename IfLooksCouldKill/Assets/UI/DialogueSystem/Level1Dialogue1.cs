@@ -59,6 +59,8 @@ public class Level1Dialogue1 : MonoBehaviour
             DialogueBox.SetActive(true);
             Char1speech.color = new Color32(50, 0, 0, 200);
 
+            prompt.text = "Press [e] to continue";
+
             clipToPlay = 0;
             playAudioClip(clipToPlay);
 
@@ -68,6 +70,7 @@ public class Level1Dialogue1 : MonoBehaviour
         else if (primeInt == 2)
         {
             DialogueBox.SetActive(true);
+            prompt.text = "Press [e] to continue";
 
             clipToPlay = 1;
             playAudioClip(clipToPlay);
@@ -76,8 +79,9 @@ public class Level1Dialogue1 : MonoBehaviour
         }
         else if (primeInt == 3)
         {
-            //Char1speech.color = new Color32(0, 0, 0, 255);
+            
             DialogueBox.SetActive(true);
+            prompt.text = "Press [e] to continue";
 
             clipToPlay = 2;
             playAudioClip(clipToPlay);
@@ -89,6 +93,7 @@ public class Level1Dialogue1 : MonoBehaviour
             clipToPlay = 3;
             playAudioClip(clipToPlay);
 
+            
             Char1speech.color = new Color32(50, 0, 0, 200);
             DialogueBox.SetActive(true);
             Char1speech.text = "AHHHHHH...thank you...";
@@ -119,6 +124,7 @@ public class Level1Dialogue1 : MonoBehaviour
         else if (primeInt > 201)
         {
             DialogueBox.SetActive(false);
+            prompt.text = "";
             Char1speech.text = "";
         }
 

@@ -40,6 +40,8 @@ public class TriggerDialogue : MonoBehaviour
             Debug.Log("player trigger");
             Level1Dialogue1 dialogueScript = GetComponent<Level1Dialogue1>();
             dialogueScript.allowKeyPress(true);
+
+            dialogueScript.talking();
            // OnTrigger.Invoke();
         }
     }

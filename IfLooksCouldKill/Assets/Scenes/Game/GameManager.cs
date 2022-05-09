@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour {
 
     public static LaserManager laser;
 
+    static bool firstTimeOpened = false;
+
     void Start()
     {
         blind = true;
@@ -59,7 +61,10 @@ public class GameManager : MonoBehaviour {
             Shader.SetGlobalInt("_Blind", 0);
             RenderSettings.skybox = default_skybox;
             RenderSettings.reflectionIntensity = 1.0f;
-            
+
+            if (!firstTimeOpened) { FindObjectOfType<Level1Dialogue>().talking();
+                firstTimeOpened = true;
+            }
         }
         GameObject[] lights = GameObject.FindGameObjectsWithTag("Light");
         foreach (GameObject light in lights) {

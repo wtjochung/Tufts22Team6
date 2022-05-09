@@ -23,6 +23,9 @@ public class NPC : VisObject {
         DialogueBox.SetActive(true);
         speech.color = new Color32(50, 0, 0, 200);
         speech.text = "ARRRRRR!!!...thank you!";
+
+        FindObjectOfType<Level1Dialogue1>().playAudioClip(3);
+
     }
 
     public override void laser_end_hit_event() {

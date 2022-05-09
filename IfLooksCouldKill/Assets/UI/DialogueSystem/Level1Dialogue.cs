@@ -29,6 +29,8 @@ public class Level1Dialogue : MonoBehaviour
     private bool passedBlocks = false;//todo set trigger
     private bool passedSolar = false;//todo set false, set trigger
 
+    private bool doorMove = false;
+
     //TODO: autoplay, integration of more voice clips
     
 
@@ -105,7 +107,7 @@ public class Level1Dialogue : MonoBehaviour
 
                 DialogueBox.SetActive(true);
                 Char1speech.color = new Color32(0, 0, 0, 255);
-                Char1speech.text = "Beautiful. Let's get you out of here.";
+                Char1speech.text = "Now turn off your beam. You should use your laser only when necessary.";
                 primeInt = 200;
 
             }
@@ -141,7 +143,7 @@ public class Level1Dialogue : MonoBehaviour
 
                 Char1speech.text = "That solar panel needs 12 volts of energy. Your eyes produce quite a lot more. Charge it up. Hopefully it won't explode.";
             }
-            else if (primeInt == 2)
+            else if (primeInt == 2 && doorMove)
             {
                 DialogueBox.SetActive(true);
                 Debug.Log("solar 2");
@@ -225,6 +227,11 @@ public class Level1Dialogue : MonoBehaviour
         passedSolar = true;
         finalLine = false;
         end = false;
+    }
+
+    public void doorMoved()
+    {
+        doorMove = true;
     }
 
     public void endDialogue()
