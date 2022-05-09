@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
     public static Material default_skybox;
     public static Material blank_skybox;
 
+    public static LaserManager laser;
+
     void Start()
     {
         blind = true;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour {
         default_skybox = default_skybox_public;
         blank_skybox = blank_skybox_public;
         set_state(blind);
+        laser = FindObjectOfType<LaserManager>();
     }
 
     void FixedUpdate() {
@@ -50,11 +53,13 @@ public class GameManager : MonoBehaviour {
             Shader.SetGlobalInt("_Blind", 1);
             RenderSettings.skybox = blank_skybox;
             RenderSettings.reflectionIntensity = 0.0f;
+            laser.setFireActive(false);
         }
         else {
             Shader.SetGlobalInt("_Blind", 0);
             RenderSettings.skybox = default_skybox;
             RenderSettings.reflectionIntensity = 1.0f;
+            laser.setFireActive(true);
         }
         GameObject[] lights = GameObject.FindGameObjectsWithTag("Light");
         foreach (GameObject light in lights) {

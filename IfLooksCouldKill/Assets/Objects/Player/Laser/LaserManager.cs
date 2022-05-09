@@ -43,6 +43,7 @@ public class LaserManager : MonoBehaviour {
 		fire = GameObject.FindGameObjectWithTag("Fire");
 		
 		fireHitPosition = this.transform.position;
+		fire.SetActive(false);
 	}
 
 	void FixedUpdate() { //Changing this to FixedUpdate lets weaker computers catch a break
@@ -119,6 +120,10 @@ public class LaserManager : MonoBehaviour {
 		line.SetPosition(1, finishPosition->point);
 	}
 
+	public void setFireActive(bool active)
+    {
+		fire.SetActive(active);
+	}
 
 	/*
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657552, g: 0.4964111, b: 0.57481605, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657642, g: 0.49641222, b: 0.57481754, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1378,8 +1378,42 @@ PrefabInstance:
       propertyPath: blackScreen
       value: 
       objectReference: {fileID: 3303283242017914461}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6784497710668095391, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
+--- !u!1 &1254888107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6784497710668095390, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
+  m_PrefabInstance: {fileID: 1254888106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1254888108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254888107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1acdb282b8fca624cb446c9b41f59dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueBox: {fileID: 3303283242017914465}
+  Char1name: {fileID: 3303283242017914464}
+  Char1speech: {fileID: 3303283242017914463}
+  prompt: {fileID: 3303283242017914462}
+  vo: {fileID: 1254888109}
+  voClips:
+  - {fileID: 8300000, guid: ff5e84b9b81bd447fae135d1fa8d38c7, type: 3}
+  - {fileID: 8300000, guid: cc2c8098e0b174616a35d87490052d24, type: 3}
+  - {fileID: 8300000, guid: 491a7030b424d4572a01e520eb7167fb, type: 3}
+  allowKey: 0
+  canvas: {fileID: 3303283242017914460}
+--- !u!82 &1254888109 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 134118016, guid: 01b7b01ad51662d428170e4d82d48354, type: 3}
+  m_PrefabInstance: {fileID: 1254888106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1261837885
 PrefabInstance:
   m_ObjectHideFlags: 0
