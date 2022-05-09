@@ -41,8 +41,9 @@ public class LaserManager : MonoBehaviour {
 	void Awake() {
 		instance = this;
 		fire = GameObject.FindGameObjectWithTag("Fire");
-		
-		fireHitPosition = this.transform.position;
+
+		Vector3 bottom = new Vector3(transform.position.x, transform.position.x - 10, transform.position.z);
+		fireHitPosition = bottom;
 		fire.SetActive(false);
 	}
 
@@ -71,6 +72,7 @@ public class LaserManager : MonoBehaviour {
 
 		if (!intersect) { 
 			hit.point = startPosition + direction * maxStepDistance;
+			//fire.SetActive(false);
 			fire.GetComponent<moveParticleSystem>().setParticle(false);
 			fireActive = false;
 		}
@@ -85,6 +87,7 @@ public class LaserManager : MonoBehaviour {
 				//activate the fire particle system
 				if (!fireActive)
                 {
+					fire.SetActive(true);
 					fireActive = true;
 					fire.GetComponent<moveParticleSystem>().setParticle(true);
 
