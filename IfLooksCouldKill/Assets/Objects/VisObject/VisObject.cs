@@ -24,6 +24,7 @@ public class VisObject : MonoBehaviour {
 
 	void Update() {
 		if (audio_source != null && vis_light != null) {
+			
 			update_sound_light();
 		}
 	}
@@ -53,6 +54,7 @@ public class VisObject : MonoBehaviour {
 		if (!called_start_hit) {
 			//Instantiate(hitEffect);
 			GameObject particleSys = Instantiate(hitEffect);
+			if (audio_source != null && !audio_source.isPlaying) audio_source.Play();
 			StartCoroutine(destroyParticles(particleSys));
 			laser_start_hit_event();
 			called_start_hit = true;
