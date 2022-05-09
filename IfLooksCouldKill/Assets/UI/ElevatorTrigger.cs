@@ -13,6 +13,7 @@ public class ElevatorTrigger : MonoBehaviour
            // FindObjectOfType<Level1Dialogue1>().talking();
             Debug.Log("elevator");
             playerEntered = true;
+
         }
 
     }
