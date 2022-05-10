@@ -19,6 +19,6 @@ public class DoorControl : VisObject
     public override void laser_end_hit_event() {
         GameObject door = base.transform.parent.gameObject;
         door.GetComponent<MoveObject>().OperateDoor();
-        
+        this.GetComponent<AudioSource>().Play();
     }
 }
