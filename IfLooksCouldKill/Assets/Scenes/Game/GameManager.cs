@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //GameManager: Contains some stuff that all objects may need access to
 public class GameManager : MonoBehaviour {
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour {
             RenderSettings.skybox = default_skybox;
             RenderSettings.reflectionIntensity = 1.0f;
 
-            if (!firstTimeOpened) { FindObjectOfType<Level1Dialogue>().talking();
+            if (!firstTimeOpened ) { FindObjectOfType<Level1Dialogue>().talking();
                 firstTimeOpened = true;
             }
         }
