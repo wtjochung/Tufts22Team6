@@ -38,6 +38,9 @@ public class PlayerControl : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && !PauseMenu.GameisPaused) {
             GameManager.toggle_blind();
         }
+        if (GetComponent<Transform>().position.y < -17) {
+            die();
+        }
     }
 
     public void die() {
