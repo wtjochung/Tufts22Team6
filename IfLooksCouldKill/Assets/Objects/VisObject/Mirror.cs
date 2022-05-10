@@ -14,7 +14,7 @@ public class Mirror : MonoBehaviour {
         scale.x = -scale.x;
         renderer.transform.localScale = scale;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        material = new Material(Shader.Find("Custom/Blind")); //Create a copy of the provided material
+        material = new Material(Shader.Find("Standard")); //Create a copy of the provided material
         render_texture = new RenderTexture(1280, 720, 1); //Create a new render texture
         material.SetTexture("_MainTex", render_texture); //Set the material instance to use the texture we wrote to
         renderer.material = material; //Set the object to use this instance of the material
@@ -22,12 +22,6 @@ public class Mirror : MonoBehaviour {
 
     void Update() {
         transform.LookAt(target); //Look at the player. This isn't actually how mirrors work, so we're not done :(
-        float x_coord = transform.localRotation.eulerAngles.x; //Calculate the x and y coords. Unity will "correct" negative numbers
-        //to be overflowing, but we actually like negative numbers and the rotation should never go above 180 anyway, so it's pretty
-        //easy to correct for that
-        if (x_coord > 180.0f) {
-            x_coord -= 360.0f;
-        }
         float y_coord = transform.localRotation.eulerAngles.y;
         if (y_coord > 180.0f) {
             y_coord -= 360.0f;
@@ -40,9 +34,9 @@ public class Mirror : MonoBehaviour {
     }
 
     void OnPreRender() {
-        float some_magic_number = 2.0f; //I think this value is actually supposed to change based on the horizontal difference
+//        float some_magic_number = 2.0f; //I think this value is actually supposed to change based on the horizontal difference
         //between the player and the camera, but idk what that equation would be and this is still serviceable
-        offset_y = (transform.position.y - target.position.y) / some_magic_number;
+        offset_y = (transform.position.y - target.position.y) - 1.4f;
         transform.Translate(0.0f, offset_y, 0.0f);
     }
 
