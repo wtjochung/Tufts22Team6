@@ -11,6 +11,8 @@ public class MoveElevatorDoor : MonoBehaviour
     bool doorOpen;
     Vector3 closePosition;
 
+    public string newLevel = "LEVEL2";
+
     private void Start()
     {
         closePosition = this.transform.position;
@@ -39,7 +41,7 @@ public class MoveElevatorDoor : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Debug.Log("load scene");
-        SceneManager.LoadSceneAsync("LEVEL2");
+        SceneManager.LoadSceneAsync(newLevel);
 
         yield return new WaitForSeconds(0.01f);
     }
